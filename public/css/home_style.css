@@ -1,0 +1,12 @@
+header {
+    display: flex;
+    border: 2px orange solid;
+    padding: 10px;
+    line-height: 20px;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.h1 {
+    align-self: flex-start;
+}
