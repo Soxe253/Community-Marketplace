@@ -1,0 +1,25 @@
+{
+  "name": "community-marketplace",
+  "version": "1.0.0",
+  "description": "CS240 Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Soxe253/Community-Marketplace.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Soxe253/Community-Marketplace/issues"
+  },
+  "homepage": "https://github.com/Soxe253/Community-Marketplace#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jasmine": "^4.5.0"
+  }
+}
