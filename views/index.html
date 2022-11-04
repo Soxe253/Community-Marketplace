@@ -4,6 +4,7 @@
 <head>
     <title>Chickens</title>
     <link href="/css/style.css" rel="stylesheet">
+    <script src="/js/app.js"></script>
 </head>
 
 <body>
@@ -11,16 +12,24 @@
     <!-- I am a comment-->
     <a href="https://en.wikipedia.org/wiki/Chicken"><img class="small" src="/img/chickens.jpg"></a>
 
-    <p>The <b>chicken</b> (<i>Gallus domesticus</i>) is a <a href="/wiki/Domestication"
-            title="Domestication">domesticated</a> bird, with attributes of wild species such as the <a
-            href="/wiki/Red_junglefowl" title="Red junglefowl">red</a> and <a href="/wiki/Grey_junglefowl"
-            title="Grey junglefowl">grey junglefowl</a> that are originally from <a href="/wiki/Southeastern_Asia"
-            class="mw-redirect" title="Southeastern Asia">Southeastern Asia</a>.
+    <p>The <b>chicken</b> (<i>Gallus domesticus</i>) is a <a href="https://en.wikipedia.org/wiki/Domestication"
+            title="Domestication">domesticated</a> bird, with attributes of wild species such as the red and grey
+        junglefowl that are originally from Southeastern Asia.
     </p>
     <input type="text">
-    <input type="date">
+    <button id="post_button">Post</button>
+    <br><br><br>
+    <!-- Notice we are using a route here instead of a full URL-->
+    <a href="/dogs"><button id="post_button">Get</button></a>
 
-    <script src="/js/app.js"></script>
+    <br><br><br><br><br>
+    Now let's try out a form:
+    <br><br>
+    <form action="/login" method="POST">
+        <p><label for="username">Username:<input type="text" name="username"></label></p>
+        <p><label for="password">Password:<input type="password" name="password"></label></p>
+        <input type="submit">
+    </form>
 </body>
 
 </html>
