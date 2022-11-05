@@ -1,0 +1,22 @@
+header{
+    display: flex;
+    padding: 10px;
+    line-height: 20px;
+    justify-content: flex-end;
+    gap: 10px;
+    font-size:large;
+}
+
+
+section{
+    display:flex;
+    justify-content: center;
+    font-size:large;
+}
+
+
+#groupcode{
+    display:flex;
+    justify-content: center;
+    padding-top: 10%;
+}
