@@ -1,0 +1,26 @@
+
+header{
+    display: flex;
+    padding: 10px;
+    line-height: 20px;
+    justify-content: flex-end;
+    gap: 10px;
+    font-size:large;
+}
+
+
+section{
+   display: flex;
+   padding-right: 15%;
+   padding-left: 7%;
+   flex-direction: column;
+   float:right;
+   font-size:larger;
+}
+section>button{
+    font-size:larger;
+}
+#yourCart{
+    display:flex;
+    justify-content: center;
+}
