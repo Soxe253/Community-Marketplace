@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="../public/css/cart_style.css"
+    rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <Header>
+    <header>
+        <h1>Community Marketplace</h1>
+            <input type="text" name="search" id="search">
+            <button type="button" value="profile" id="profile">
+                <p>Profile</p>
+            </button>
+            <a href="../views/cart.html"><button type="button" id="cart">
+                <img src="../public/img/cart.png" alt="cart" width="30" height="30">
+            </button>
+            </a>
+    </header>
+    <h1>
         Login Page
-    </Header>
+    </h1>
     <input type="text" name="Username" id="username">
     <br><br>
     <input type="text" name="Password" id="password">
