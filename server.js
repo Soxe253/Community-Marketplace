@@ -47,6 +47,11 @@ app.post("/login", (req, res) => {
     res.send('<h1>Successful Login</h1>');
 });
 
+app.post("/createaccount", (req, res) => {
+    console.log(req.body);
+    res.send('<h1>Successful Creation of Account</h1>');
+});
+
 // starts web server listening on localhost at port 3000
 app.listen(port, () => {
     console.log('Listening on port 3000...');
