@@ -1,0 +1,28 @@
+header{
+    display: flex;
+    border: 2px orange solid;
+    padding: 10px;
+    line-height: 20px;
+    justify-content: flex-end;
+    gap: 10px;
+    font-size:large;
+}
+
+#search{
+    display:block;
+    width:50%;
+}
+
+
+section{
+    display:flex;
+    justify-content: center;
+    font-size:large;
+}
+
+
+#groupcode{
+    display:flex;
+    justify-content: center;
+    padding-top: 10%;
+}
