@@ -16,6 +16,7 @@ app.use('/css', express.static(__dirname + 'public/css'));
 app.use('/js', express.static(__dirname + 'public/js'));
 app.use('/img', express.static(__dirname + 'public/img'));
 
+
 // Register middleware to be used
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
@@ -32,6 +33,7 @@ app.get("/", (req, res) => {
 app.post("/postButton", (req, res) => {
     console.log(req.body);
     res.json({ text: "You did it!" });
+
 })
 
 app.get("/dogs", (req, res) => {
@@ -47,4 +49,10 @@ app.post("/login", (req, res) => {
 // starts web server listening on localhost at port 3000
 app.listen(port, () => {
     console.log('Listening on port 3000...');
+});
+
+//takes user to cart from cart button
+app.get("/cart", (req, res) => {
+    console.log('got here');
+    res.sendFile(__dirname + '/views/cart.html');
 });
