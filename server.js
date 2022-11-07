@@ -36,10 +36,11 @@ app.post("/postButton", (req, res) => {
 
 })
 
-app.get("/dogs", (req, res) => {
+app.get("/cart.png", (req, res) => {
     console.log('got here');
-    res.sendFile(__dirname + '/views/dogs.html');
+    res.sendFile(__dirname + '/public/img/cart.png');
 });
+
 
 app.post("/login", (req, res) => {
     console.log(req.body);
