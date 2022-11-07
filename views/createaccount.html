@@ -11,25 +11,27 @@
 <body>
     <header>
         <h1>Community Marketplace</h1>
-        <div>
             <input type="text" name="search" id="search">
             <button type="button" value="profile" id="profile">
                 <p>Profile</p>
             </button>
             <a href="/cart"><button type="button" id="cart">
-                <img src="/img/cart.png" alt="cart" width="30" height="30">
+                <img src="/cart.png" alt="cart" width="30" height="30">
             </button>
             </a>
-        </div>
     </header>
-    <div class="center">
-    <input type="text" name="Username" id="username" class="textbox">Username</input>
+    <h1>
+        Create Account
+    </h1>
+    <input type="text" name="firstName" id="firstName">
     <br><br>
-    <input type="text" name="Password" id="password" class="textbox">Password</input>
+    <input type="text" name="lastName" id="lastName">
     <br><br>
-    <a href="/home"><button type="button" value="Login" id="login">Login</button>
-    </a>
-</div>
-    <script src="/js/login.js"></script>
+    <input type="text" name="Username" id="username">
+    <br><br>
+    <input type="text" name="Password" id="password">
+    <br><br>
+    <button type="button" value="createAccount" id="createAccount">Create Account</button>
+    <script src="/js/createaccount*.js"></script>
 </body>
 </html>

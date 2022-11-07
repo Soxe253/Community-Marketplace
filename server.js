@@ -36,14 +36,20 @@ app.post("/postButton", (req, res) => {
 
 })
 
-app.get("/dogs", (req, res) => {
+app.get("/cart.png", (req, res) => {
     console.log('got here');
-    res.sendFile(__dirname + '/views/dogs.html');
+    res.sendFile(__dirname + '/public/img/cart.png');
 });
+
 
 app.post("/login", (req, res) => {
     console.log(req.body);
     res.send('<h1>Successful Login</h1>');
+});
+
+app.post("/createaccount", (req, res) => {
+    console.log(req.body);
+    res.send('<h1>Successful Creation of Account</h1>');
 });
 
 // starts web server listening on localhost at port 3000
