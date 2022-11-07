@@ -12,5 +12,17 @@ header{
     display:block;
     width:50%;
 }
-
+.center{
+    display: flex;
+    margin: auto;
+    width: 30%;
+    height: 50%;
+    border: 5px green;
+    padding: 150px;
+    flex-direction: column;
+}
+.textbox{
+    height: 18px;
+    width: 300px;
+}
 

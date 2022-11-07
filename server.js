@@ -56,3 +56,8 @@ app.get("/cart", (req, res) => {
     console.log('got here');
     res.sendFile(__dirname + '/views/cart.html');
 });
+//takes user to homepage from login
+app.get("/home", (req, res) => {
+    console.log('got here');
+    res.sendFile(__dirname + '/views/home.html');
+});
