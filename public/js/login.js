@@ -13,10 +13,6 @@ async function buttonListener(){
             }
             
             jsonUser = JSON.stringify(user);
-        
-            document.getElementById("username").value = "";
-            document.getElementById("password").value = "";
-            
 
             // fs.writeFile('users.txt', jsonUser, err => {
             //     if(err){

@@ -23,12 +23,16 @@
         </div>
     </header>
     <div class="center">
-    <input type="text" name="Username" id="username" class="textbox">Username</input>
+        <form action="/login" method="post">
+            Username:
+            <input type="text" name="Username" id="username" class="textbox"></input>
     <br><br>
-    <input type="text" name="Password" id="password" class="textbox">Password</input>
+            Password:
+            <input type="password" name="Password" id="password" class="textbox"></input>
     <br><br>
-    <a href="/home"><button type="button" value="Login" id="login">Login</button>
+            <a href="/home"><input type="submit" value="Login" id="login"></input>
     </a>
+        </form>
 </div>
     <script src="/js/login.js"></script>
 </body>

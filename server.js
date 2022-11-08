@@ -3,7 +3,9 @@
 */
 
 const express = require("express");
+const fs = require('fs');
 const bodyParser = require("body-parser"); // If we get data in a POST, this will parse it for us
+const { userInfo } = require("os");
 
 // Creates an Express application: https://expressjs.com/en/4x/api.html#app
 // Returns the Express application object
@@ -44,7 +46,14 @@ app.get("/cart.png", (req, res) => {
 
 app.post("/login", (req, res) => {
     console.log(req.body);
-    res.send('<h1>Successful Login</h1>');
+    let info = JSON.stringify(req.body);
+    fs.appendFile('users.txt', info, function(err){
+        if(err){
+            console.log(err);
+        }
+        console.log("success"); 
+    })
+    res.sendFile(__dirname + '/views/home.html');
 });
 
 app.post("/createaccount", (req, res) => {

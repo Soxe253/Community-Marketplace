@@ -1,7 +1,6 @@
 window.addEventListener("DOMContentLoaded", registerPostButtonListener);
 //window.addEventListener("DOMContentLoaded", doSomeStuff);
 
-
 // When the Post button is clicked, we send a POST request to the server
 // using the route "/postButton". The POST request contains data that 
 // we are sending along (whatever is typed in the input). The server
@@ -24,6 +23,7 @@ function registerPostButtonListener() {
         let result = await response.json();
         input.value = result.text;
     });
+
 }
 
 // This is manipulating the DOM
