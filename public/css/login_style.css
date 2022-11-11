@@ -24,6 +24,17 @@ div {
     display:block;
     width:50%;
 }
+
+#profile {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+}
+
+#template {
+    color: red;
+}
+
 .center{
     display: flex;
     margin: auto;
@@ -37,10 +48,6 @@ div {
     height: 18px;
     width: 300px;
 }
-#profile {
-    height: 50px;
-    width: 50px;
-    border-radius: 25px;
-}
+
 
 

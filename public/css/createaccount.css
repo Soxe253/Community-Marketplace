@@ -7,6 +7,10 @@ header{
     gap: 10px;
     font-size:large;
 }
+h1{
+    display:flex;
+    justify-content:center;
+}
 
 #title {
     align-self: flex-start;
@@ -31,18 +35,23 @@ div {
     border-radius: 25px;
 }
 
-section{
-   display: flex;
-   padding-right: 15%;
-   padding-left: 7%;
-   flex-direction: column;
-   float:right;
-   font-size:larger;
+#template {
+    color: red;
 }
-section>button{
-    font-size:larger;
+
+.center{
+    display: flex;
+    margin: auto;
+    width: 30%;
+    height: 50%;
+    border: 5px green;
+    padding: 150px;
+    flex-direction: column;
 }
-#yourCart{
-    display:flex;
-    justify-content: center;
+.textbox{
+    height: 18px;
+    width: 300px;
 }
+
+
+
