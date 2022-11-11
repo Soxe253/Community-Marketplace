@@ -32,8 +32,6 @@ header{
 }
 
 .sidebar{
-    display:flex;
-    flex-direction:column;
     height: 100%;
     width: 160px;
     position: fixed;
@@ -43,6 +41,13 @@ header{
     background-color: violet;
     overflow-x: hidden;
     padding-top: 20px;
+}
+.sidebar a{
+    padding: 6px 8px 6px 18px;
+    text-decoration: none;
+    font-size: 25px;
+    color: blue;
+    display: block;
 }
 .main{
     margin-left: 160px;
