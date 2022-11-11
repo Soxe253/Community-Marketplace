@@ -1,3 +1,4 @@
 {"Username":"Spencer","Password":"123"}{"Username":"bob","Password":"100"}
 {"Username":"tim","Password":"400"}
 
+{"Username":"","Password":""}
