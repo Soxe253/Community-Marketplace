@@ -31,6 +31,10 @@ div {
     border-radius: 25px;
 }
 
+#template {
+    color: red;
+}
+
 .center{
     display: flex;
     margin: auto;

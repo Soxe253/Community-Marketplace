@@ -24,14 +24,15 @@
     </header>
     <div class="center">
         <form action="/login" method="post">
+            <template>Username or password incorrect</template>
             Username:
             <input type="text" name="Username" id="username" class="textbox"></input>
-    <br><br>
+            <br><br>
             Password:
             <input type="password" name="Password" id="password" class="textbox"></input>
-    <br><br>
+            <br><br>
             <a href="/home"><input type="submit" value="Login" id="login"></input>
-    </a>
+            </a>
         </form>
 </div>
     <script src="/js/login.js"></script>
