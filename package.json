@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/Soxe253/Community-Marketplace#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "jasmine": "^4.5.0"
