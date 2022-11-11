@@ -50,6 +50,10 @@ app.get("/login", (req, res) => {
     console.log('got to log in');
     res.sendFile(__dirname + '/views/login.html');
 });
+app.get("/search", (req, res) => {
+    console.log('got to log in');
+    res.sendFile(__dirname + '/views/search.html');
+});
 
 app.post("/createaccount", (req, res) => {
     console.log(req.body);
