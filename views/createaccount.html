@@ -23,15 +23,25 @@
     <h1>
         Create Account
     </h1>
-    <input type="text" name="firstName" id="firstName">
+    <div class="center">
+        <form action="/createaccount" method="post">
+            First Name:
+            <input type="text" name="FirstName" id="firstName" class="textbox"></input>
     <br><br>
-    <input type="text" name="lastName" id="lastName">
+            Last Name:
+            <input type="text" name="LastName" id="lastName" class="textbox"></input>
     <br><br>
-    <input type="text" name="Username" id="username">
+            Username:
+            <input type="text" name="Username" id="username" class="textbox"></input>
     <br><br>
-    <input type="text" name="Password" id="password">
+            Password:
+            <input type="password" name="Password" id="password" class="textbox"></input>
     <br><br>
-    <button type="button" value="createAccount" id="createAccount">Create Account</button>
-    <script src="/js/createaccount*.js"></script>
+
+            <a href="/grouplogin"><input type="submit" value="Create Account" id="createAccount"></input>
+    </a>
+        </form>
+</div>
+    <script src="/js/createaccount.js"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 /*
     The most basic Express web server running locally
 */
+var logins=[];
 
 const express = require("express");
 const fs = require('fs');
@@ -39,8 +40,19 @@ app.post("/postButton", (req, res) => {
 })
 
 app.get("/cart.png", (req, res) => {
-    console.log('got here');
     res.sendFile(__dirname + '/public/img/cart.png');
+});
+app.get("/createaccount", (req, res) => {
+    console.log('got to create account');
+    res.sendFile(__dirname + '/views/createaccount.html');
+});
+
+app.post("/createaccount", (req, res) => {
+    console.log(req.body);
+    logins.push(req.body);
+    console.log("success");
+    console.log(logins);
+    res.sendFile(__dirname + '/views/home.html');
 });
 
 
@@ -64,11 +76,6 @@ app.post("/login", (req, res) => {
     res.sendFile(__dirname + '/views/home.html');
 });
 
-app.post("/createaccount", (req, res) => {
-    console.log(req.body);
-    res.send('<h1>Successful Creation of Account</h1>');
-});
-
 // starts web server listening on localhost at port 3000
 app.listen(port, () => {
     console.log('Listening on port 3000...');
@@ -76,12 +83,12 @@ app.listen(port, () => {
 
 //takes user to cart from cart button
 app.get("/cart", (req, res) => {
-    console.log('got here');
+    console.log('got to cart');
     res.sendFile(__dirname + '/views/cart.html');
 });
 //takes user to homepage from login
 app.get("/home", (req, res) => {
-    console.log('got here');
+    console.log('got to homepage');
     res.sendFile(__dirname + '/views/home.html');
 });
 
