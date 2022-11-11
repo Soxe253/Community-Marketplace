@@ -46,6 +46,10 @@ app.get("/createaccount", (req, res) => {
     console.log('got to create account');
     res.sendFile(__dirname + '/views/createaccount.html');
 });
+app.get("/login", (req, res) => {
+    console.log('got to log in');
+    res.sendFile(__dirname + '/views/login.html');
+});
 
 app.post("/createaccount", (req, res) => {
     console.log(req.body);
