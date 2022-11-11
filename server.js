@@ -47,12 +47,20 @@ app.get("/cart.png", (req, res) => {
 app.post("/login", (req, res) => {
     console.log(req.body);
     let info = JSON.stringify(req.body);
-    fs.appendFile('users.txt', info, function(err){
+    fs.appendFile('users.txt', (info + "\n"), function(err){
         if(err){
             console.log(err);
         }
         console.log("success"); 
     })
+
+    // fs.readFile('users.txt', 'utf8', (err,data) => {
+    //     if(err){
+    //         console.err(err);
+    //         return;
+    //     }
+    //     console.log(data[0]);
+    // });
     res.sendFile(__dirname + '/views/home.html');
 });
 
@@ -76,3 +84,4 @@ app.get("/home", (req, res) => {
     console.log('got here');
     res.sendFile(__dirname + '/views/home.html');
 });
+
