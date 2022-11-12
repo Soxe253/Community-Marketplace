@@ -1,15 +1,11 @@
 header{
     display: flex;
-    border: 2px orange solid;
+    border: 2px rgb(128, 179, 126) solid;
     padding: 10px;
     line-height: 20px;
     justify-content: space-between;
     gap: 10px;
     font-size:large;
-}
-
-#title {
-    align-self: flex-start;
 }
 
 div {
@@ -22,7 +18,7 @@ div {
     height: 15px;
     align-self: center;
     display:block;
-    width:50%;
+    width:85%;
 }
 
 #profile {
@@ -45,4 +41,8 @@ section>button{
 #yourCart{
     display:flex;
     justify-content: center;
+}
+#cart{
+    height:50px;
+    width:50px;
 }

@@ -1,12 +1,13 @@
 header{
     display: flex;
-    border: 2px orange solid;
+    border: 2px rgb(128, 179, 126) solid;
     padding: 10px;
     line-height: 20px;
     justify-content: space-between;
     gap: 10px;
     font-size:large;
 }
+
 
 #title {
     align-self: flex-start;
@@ -22,7 +23,7 @@ header{
     height: 15px;
     align-self: center;
     display:block;
-    width:50%;
+    width:85%;
 }
 
 #profile {
@@ -40,7 +41,7 @@ header{
     left: 0;
     background-color: violet;
     overflow-x: hidden;
-    padding-top: 20px;
+    padding-top: 100px;
 }
 .sidebar a{
     padding: 6px 8px 6px 18px;
@@ -53,4 +54,9 @@ header{
     margin-left: 160px;
     padding: 0px 10px;
 
+}
+
+#cart{
+    height:50px;
+    width:50px;
 }
