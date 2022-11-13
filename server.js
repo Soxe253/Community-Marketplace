@@ -103,4 +103,8 @@ app.get("/profile", (req, res) => {
     console.log('got to profile');
     res.sendFile(__dirname + '/views/profile.html');
 });
+app.get("/post", (req, res) => {
+    console.log('got to post');
+    res.sendFile(__dirname + '/views/post.html');
+});
 
