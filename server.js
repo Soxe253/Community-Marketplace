@@ -43,6 +43,7 @@ app.get("/cart.png", (req, res) => {
     res.sendFile(__dirname + '/public/img/cart.png');
 });
 app.get("/grouplogin", (req, res) => {
+    console.log("got to group log in")
     res.sendFile(__dirname + '/views/grouplogin.html');
 });
 app.get("/createaccount", (req, res) => {
