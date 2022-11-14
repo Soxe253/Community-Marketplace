@@ -69,15 +69,15 @@ app.post("/createaccount", (req, res) => {
 });
 
 
-app.post("/login", (req, res) => {
-    console.log(req.body);
+app.post("/createaccountgo", (req, res) => {
+    //console.log(req.body);
     let info = JSON.stringify(req.body);
-    // fs.appendFile('users.txt', (info + "\n"), function(err){
-    //     if(err){
-    //         console.log(err);
-    //     }
-    //     console.log("success"); 
-    // })
+    fs.appendFile('users.txt', (info + "\n"), function(err){
+        if(err){
+            console.log(err);
+        }
+        console.log("success"); 
+    })
 
     // fs.readFile('users.txt', 'utf8', (err,data) => {
     //     if(err){
