@@ -37,9 +37,7 @@ div {
 }
 
 #bigSearch {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: auto;
     height: 30px;
     display: block;
     width: 300px;
