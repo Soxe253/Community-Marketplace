@@ -42,6 +42,9 @@ app.post("/postButton", (req, res) => {
 app.get("/cart.png", (req, res) => {
     res.sendFile(__dirname + '/public/img/cart.png');
 });
+app.get("/grouplogin", (req, res) => {
+    res.sendFile(__dirname + '/views/grouplogin.html');
+});
 app.get("/createaccount", (req, res) => {
     console.log('got to create account');
     res.sendFile(__dirname + '/views/createaccount.html');
