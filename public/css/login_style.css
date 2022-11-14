@@ -1,6 +1,6 @@
 header{
     display: flex;
-    border: 2px orange solid;
+    border: 2px rgb(128, 179, 126) solid;
     padding: 10px;
     line-height: 20px;
     justify-content: space-between;
@@ -21,13 +21,6 @@ div {
     display:flex;
     justify-content: space-between;
     align-items: center;
-}
-
-#search {
-    height: 15px;
-    align-self: center;
-    display:block;
-    width:50%;
 }
 
 #profile {
