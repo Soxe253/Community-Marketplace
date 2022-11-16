@@ -112,4 +112,8 @@ app.get("/post", (req, res) => {
     console.log('got to post');
     res.sendFile(__dirname + '/views/post.html');
 });
+app.get("/help", (req, res) => {
+    console.log('got to help');
+    res.sendFile(__dirname + '/views/help.html');
+});
 
