@@ -27,6 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // Route definitions
 app.get("/", (req, res) => {
+    console.log("got to login");
     res.sendFile(__dirname + '/views/login.html');
 });
 
@@ -43,6 +44,7 @@ app.get("/cart.png", (req, res) => {
     res.sendFile(__dirname + '/public/img/cart.png');
 });
 app.get("/grouplogin", (req, res) => {
+    console.log("got to group log in")
     res.sendFile(__dirname + '/views/grouplogin.html');
 });
 app.get("/createaccount", (req, res) => {
@@ -54,17 +56,17 @@ app.post("/login", (req, res) => {
     res.sendFile(__dirname + '/views/home.html');
 });
 app.get("/search", (req, res) => {
-    console.log('got to log in');
+    console.log('got to search');
     res.sendFile(__dirname + '/views/search.html');
 });
 
-// app.post("/createaccount", (req, res) => {
-//     console.log(req.body);
-//     logins.push(req.body);
-//     console.log("success");
-//     console.log(logins);
-//     res.sendFile(__dirname + '/views/home.html');
-// });
+app.post("/createaccount", (req, res) => {
+    console.log(req.body);
+    logins.push(req.body);
+    console.log("success");
+    console.log(logins);
+    res.sendFile(__dirname + '/views/grouplogin.html');
+});
 
 
 app.post("/createaccountgo", (req, res) => {
