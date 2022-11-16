@@ -51,9 +51,9 @@ app.get("/createaccount", (req, res) => {
     console.log('got to create account');
     res.sendFile(__dirname + '/views/createaccount.html');
 });
-app.get("/login", (req, res) => {
+app.post("/login", (req, res) => {
     console.log('got to log in');
-    res.sendFile(__dirname + '/views/login.html');
+    res.sendFile(__dirname + '/views/home.html');
 });
 app.get("/search", (req, res) => {
     console.log('got to search');
@@ -86,7 +86,7 @@ app.post("/createaccountgo", (req, res) => {
     //     }
     //     console.log(data[0]);
     // });
-    res.sendFile(__dirname + '/views/home.html');
+    res.sendFile(__dirname + '/views/grouplogin.html');
 });
 
 // starts web server listening on localhost at port 3000
