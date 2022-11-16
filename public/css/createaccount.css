@@ -7,6 +7,10 @@ header{
     gap: 10px;
     font-size:large;
 }
+h1{
+    display:flex;
+    justify-content:center;
+}
 
 #title {
     align-self: flex-start;
@@ -30,3 +34,24 @@ div {
     width: 50px;
     border-radius: 25px;
 }
+
+#template {
+    color: red;
+}
+
+.center{
+    display: flex;
+    margin: auto;
+    width: 30%;
+    height: 50%;
+    border: 5px green;
+    padding: 150px;
+    flex-direction: column;
+}
+.textbox{
+    height: 18px;
+    width: 300px;
+}
+
+
+

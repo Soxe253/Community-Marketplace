@@ -10,28 +10,28 @@
 </head>
 <body>
     <header>
-        <h1>Community Marketplace</h1>
+        <img src="/img/logo.jpg" alt="Community Marketplace" id="logo" height="60">
         <div>
-            <input type="text" name="search" id="search">
-            <button type="button" value="profile" id="profile">
-                <p>Profile</p>
-            </button>
-            <a href="/cart"><button type="button" id="cart">
-                <img src="/img/cart.png" alt="cart" width="30" height="30">
+            <a href="/createaccount"><button type="button" id="createaccount">
+                <p>Create Account</p>
             </button>
             </a>
         </div>
     </header>
+    <h1>
+        Log In
+    </h1>
     <div class="center">
         <form action="/login" method="post">
+            <template>Username or password incorrect</template>
             Username:
             <input type="text" name="Username" id="username" class="textbox"></input>
-    <br><br>
+            <br><br>
             Password:
             <input type="password" name="Password" id="password" class="textbox"></input>
-    <br><br>
+            <br><br>
             <a href="/home"><input type="submit" value="Login" id="login"></input>
-    </a>
+            </a>
         </form>
 </div>
     <script src="/js/login.js"></script>

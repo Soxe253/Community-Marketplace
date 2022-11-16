@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="/css/login_style.css" type="text/css"
+    <link href="/css/createaccount.css" type="text/css"
     rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,14 +10,10 @@
 </head>
 <body>
     <header>
-        <h1>Community Marketplace</h1>
+        <img src="/img/logo.jpg" alt="Community Marketplace" id="logo" height="60">
         <div>
-            <input type="text" name="search" id="search">
-            <button type="button" value="profile" id="profile">
-                <p>Profile</p>
-            </button>
-            <a href="/cart.html"><button type="button" id="cart">
-                <img src="/img/cart.png" alt="cart" width="30" height="30">
+            <a href="/login"><button type="button" id="login">
+                <p>Log In</p>
             </button>
             </a>
         </div>
@@ -26,17 +22,17 @@
         Create Account
     </h1>
     <div class="center">
-        <form action="/createaccount" method="post">
-            First Name:
+        <form action="/createaccountgo" method="post">
+            First Name:&nbsp
             <input type="text" name="FirstName" id="firstName" class="textbox"></input>
     <br><br>
-            Last Name:
+            Last Name:&nbsp;&nbsp;
             <input type="text" name="LastName" id="lastName" class="textbox"></input>
     <br><br>
-            Username:
+            Username:&nbsp;&nbsp;&nbsp;
             <input type="text" name="Username" id="username" class="textbox"></input>
     <br><br>
-            Password:
+            Password:&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="password" name="Password" id="password" class="textbox"></input>
     <br><br>
 

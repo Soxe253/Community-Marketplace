@@ -27,6 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // Route definitions
 app.get("/", (req, res) => {
+    console.log("got to login");
     res.sendFile(__dirname + '/views/login.html');
 });
 
@@ -42,9 +43,21 @@ app.post("/postButton", (req, res) => {
 app.get("/cart.png", (req, res) => {
     res.sendFile(__dirname + '/public/img/cart.png');
 });
+app.get("/grouplogin", (req, res) => {
+    console.log("got to group log in")
+    res.sendFile(__dirname + '/views/grouplogin.html');
+});
 app.get("/createaccount", (req, res) => {
     console.log('got to create account');
     res.sendFile(__dirname + '/views/createaccount.html');
+});
+app.post("/login", (req, res) => {
+    console.log('got to log in');
+    res.sendFile(__dirname + '/views/home.html');
+});
+app.get("/search", (req, res) => {
+    console.log('got to search');
+    res.sendFile(__dirname + '/views/search.html');
 });
 
 app.post("/createaccount", (req, res) => {
@@ -52,12 +65,12 @@ app.post("/createaccount", (req, res) => {
     logins.push(req.body);
     console.log("success");
     console.log(logins);
-    res.sendFile(__dirname + '/views/home.html');
+    res.sendFile(__dirname + '/views/grouplogin.html');
 });
 
 
-app.post("/login", (req, res) => {
-    console.log(req.body);
+app.post("/createaccountgo", (req, res) => {
+    //console.log(req.body);
     let info = JSON.stringify(req.body);
     fs.appendFile('users.txt', (info + "\n"), function(err){
         if(err){
@@ -73,7 +86,7 @@ app.post("/login", (req, res) => {
     //     }
     //     console.log(data[0]);
     // });
-    res.sendFile(__dirname + '/views/home.html');
+    res.sendFile(__dirname + '/views/grouplogin.html');
 });
 
 // starts web server listening on localhost at port 3000
@@ -90,5 +103,13 @@ app.get("/cart", (req, res) => {
 app.get("/home", (req, res) => {
     console.log('got to homepage');
     res.sendFile(__dirname + '/views/home.html');
+});
+app.get("/profile", (req, res) => {
+    console.log('got to profile');
+    res.sendFile(__dirname + '/views/profile.html');
+});
+app.get("/post", (req, res) => {
+    console.log('got to post');
+    res.sendFile(__dirname + '/views/post.html');
 });
 

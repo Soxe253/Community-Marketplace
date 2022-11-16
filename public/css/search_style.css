@@ -1,6 +1,6 @@
 header{
     display: flex;
-    border: 2px orange solid;
+    border: 2px rgb(128, 179, 126) solid;
     padding: 10px;
     line-height: 20px;
     justify-content: space-between;
@@ -31,10 +31,13 @@ div {
     border-radius: 25px;
 }
 
+#cart{
+    height:50px;
+    width:50px;
+}
+
 #bigSearch {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: auto;
     height: 30px;
     display: block;
     width: 300px;

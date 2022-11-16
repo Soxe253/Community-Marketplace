@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 {"Username":"Spencer","Password":"123"}{"Username":"bob","Password":"100"}
 {"Username":"tim","Password":"400"}
 {"Username":"","Password":""}
 {"Username":"","Password":""}
 {"Username":"","Password":""}
 {"Username":"","Password":""}
+=======
+{"FirstName":"Spencer","LastName":"Oxe","Username":"spencer123","Password":"1234"}
+{"FirstName":"","LastName":"","Username":"","Password":""}
+{"FirstName":"","LastName":"","Username":"","Password":""}
+>>>>>>> fbb5493199a70ee79c4510114a22d856a6223287

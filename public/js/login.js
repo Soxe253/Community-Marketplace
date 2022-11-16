@@ -14,16 +14,10 @@ async function buttonListener(){
             
             jsonUser = JSON.stringify(user);
 
-            // fs.writeFile('users.txt', jsonUser, err => {
-            //     if(err){
-            //         console.error(err);
-            //     }
-            //     console.log("file written")
-            // });
             console.log(jsonUser);
             jsUser = JSON.parse(jsonUser);
             console.log(jsUser.userName + " " + jsUser.password);
-
+            window.location = /views/home.html;
         })
 }
 
