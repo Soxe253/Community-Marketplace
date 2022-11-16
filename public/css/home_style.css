@@ -8,10 +8,6 @@ header{
     font-size:large;
 }
 
-#title {
-    align-self: flex-start;
-}
-
 div {
     display:flex;
     justify-content: space-between;
@@ -22,7 +18,7 @@ div {
     height: 15px;
     align-self: center;
     display:block;
-    width:50%;
+    width:85%;
 }
 
 #profile {
