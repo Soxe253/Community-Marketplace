@@ -86,7 +86,7 @@ app.post("/createaccountgo", (req, res) => {
     //     }
     //     console.log(data[0]);
     // });
-    res.sendFile(__dirname + '/views/grouplogin.html');
+    res.sendFile(__dirname + '/views/home.html');
 });
 
 // starts web server listening on localhost at port 3000
@@ -115,5 +115,9 @@ app.get("/post", (req, res) => {
 app.get("/help", (req, res) => {
     console.log('got to help');
     res.sendFile(__dirname + '/views/help.html');
+});
+app.get("/loginpage", (req, res) => {
+    console.log('got to login');
+    res.sendFile(__dirname + '/views/login.html');
 });
 
