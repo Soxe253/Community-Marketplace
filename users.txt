@@ -1,2 +1,2 @@
-{"Username":"test","Password":"test","FirstName":"test","LastName":"test","GroupCode":"5"}
-{"Username":"3","Password":"4","FirstName":"1","LastName":"2","GroupCode":"5"}
+{"FirstName":"Spencer","LastName":"Oxe","Username":"spencer123","Password":"1234"}
+{"FirstName":"Quinn","LastName":"Stober","Username":"quinnstober","Password":"password","GroupCode":"12345"}
