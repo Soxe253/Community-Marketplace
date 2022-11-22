@@ -8,10 +8,10 @@ async function buttonListener(){
     let button = document.querySelector("#createAccount");
         button.addEventListener("click", async function(){
             var user = {
-                firstName: document.querySelector("#firstName").value,
-                lastName: document.querySelector("#lastName").value,
                 userName: document.querySelector("#username").value,
-                password: document.querySelector("#password").value
+                password: document.querySelector("#password").value,
+                firstName: document.querySelector("#firstName").value,
+                lastName: document.querySelector("#lastName").value
             }
             
             jsonUser = JSON.stringify(user);

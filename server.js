@@ -71,7 +71,16 @@ app.post("/createaccount", (req, res) => {
 
 app.post("/createaccountgo", (req, res) => {
     //console.log(req.body);
-    let info = JSON.stringify(req.body);
+    let user=req.body;
+    let newUser={
+        Username:user.Username,
+        Password:user.Password,
+        FirstName:user.FirstName,
+        LastName:user.LastName,
+        GroupCode:user.GroupCode
+    };
+
+    let info = JSON.stringify(newUser);
     fs.appendFile('users.txt', (info + "\n"), function(err){
         if(err){
             console.log(err);
@@ -87,6 +96,24 @@ app.post("/createaccountgo", (req, res) => {
     //     console.log(data[0]);
     // });
     res.sendFile(__dirname + '/views/home.html');
+});
+app.post("/logingo", (req, res) => {
+    let userInfo = JSON.stringify(req.body);
+    userInfo=userInfo.substring(0,((userInfo.length)-1));//take off end bracket of username and password entered
+    const readline=require('readline');
+    var r=readline.createInterface({
+        input: fs.createReadStream('users.txt')
+    });
+    r.on('line', function (text){//every line of users.txt
+        const userLength=userInfo.length;
+        if((text.substring(0,userLength))===userInfo){
+            console.log('success');
+            res.sendFile(__dirname + '/views/home.html');//send to home if correct
+}
+    })
+    
+    console.log('wrong');
+    res.sendFile(__dirname + '/views/login.html');//send to login if wrong
 });
 
 // starts web server listening on localhost at port 3000
