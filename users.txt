@@ -1,2 +1,0 @@
-{"FirstName":"Spencer","LastName":"Oxe","Username":"spencer123","Password":"1234"}
-{"FirstName":"Quinn","LastName":"Stober","Username":"quinnstober","Password":"password","GroupCode":"12345"}
