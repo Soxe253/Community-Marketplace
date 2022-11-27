@@ -148,3 +148,20 @@ app.get("/loginpage", (req, res) => {
     res.sendFile(__dirname + '/views/login.html');
 });
 
+app.post("/newPost", (req, res) => {  //posting request stuff in progress - Jordan
+    //console.log(req.body);
+    let post=req.body;
+    let newPost={
+        postText:post.Description
+    };
+
+    let info = JSON.stringify(newPost);
+    console.log("got post");
+    fs.appendFile('posts.txt', (info + "\n"), function(err){
+        if(err){
+            console.log(err);
+        }
+        console.log("success"); 
+    })
+    res.sendFile(__dirname + '/views/home.html');
+})

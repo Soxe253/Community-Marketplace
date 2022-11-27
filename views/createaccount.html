@@ -22,23 +22,17 @@
         Create Account
     </h1>
     <div class="center"> <!--entry for account information-->
-        <form action="/createaccountgo" method="post">
-            First Name:
+        <form action="/createaccountgo" method="post" class="accountForm">
+            <div class="accountLabel">First Name:</div>
             <input type="text" name="FirstName" id="firstName" class="textbox"></input>
-    <br><br>
-            Last Name:
+            <div class="accountLabel">Last Name:</div>
             <input type="text" name="LastName" id="lastName" class="textbox"></input>
-    <br><br>
-            Username:
+            <div class="accountLabel">Username:</div>
             <input type="text" name="Username" id="username" class="textbox"></input>
-    <br><br>
-            Password:
+            <div class="accountLabel">Password:</div>
             <input type="password" name="Password" id="password" class="textbox"></input>
-    <br><br>
-            Group Code:
-            <input type="text" name="GroupCode" id="groupCode" class="textbox"></input>
-    <br><br>
-
+            <div class="accountLabel">Group Code:</div>
+            <input type="text" name="Group Code" id="groupCode" class="textbox"></input>
             <a href="/grouplogin"><input type="submit" value="Create Account" id="createAccount"></input> <!--calls creation of an account with the given information in the textboxes-->
     </a>
         </form>

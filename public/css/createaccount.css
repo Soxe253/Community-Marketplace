@@ -53,5 +53,13 @@ div {
     width: 300px;
 }
 
+.accountForm{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.accountLabel{
+    padding-bottom: 1rem;
+}
 
 
