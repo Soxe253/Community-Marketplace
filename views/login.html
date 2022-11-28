@@ -22,14 +22,12 @@
         Log In
     </h1>
     <div class="center">
-        <form action="/logingo" method="post">
+        <form action="/logingo" method="post" class="loginForm">
             <template>Username or password incorrect</template>
-            Username:
+            <div class ="loginLabel">Username:</div>
             <input type="text" name="Username" id="username" class="textbox"></input>
-            <br><br>
-            Password:
+            <div class ="loginLabel">Password:</div>
             <input type="password" name="Password" id="password" class="textbox"></input>
-            <br><br>
             <a href="/home"><input type="submit" value="Login" id="login"></input>
             </a>
         </form>
