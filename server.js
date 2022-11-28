@@ -112,8 +112,11 @@ app.post("/logingo", (req, res) => {
 }
     })
     
-    console.log('wrong');
+    r.on('close',function(){
+        console.log('wrong');
     res.sendFile(__dirname + '/views/login.html');//send to login if wrong
+    })
+    
 });
 
 // starts web server listening on localhost at port 3000
