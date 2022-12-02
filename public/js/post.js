@@ -11,7 +11,6 @@ async function buttonListener() {
             jsonPost = JSON.stringify(post); //converts the post to a string
 
             console.log(jsonPost);
-            // document.querySelector(#posts).textContent = jsonPost; //adds the new post to the home page (it doesn't work though)
-            //window.location = "/views/home.html"; //returns to home page
+            window.location = "/views/home.html"; //returns to home page
         })
 }

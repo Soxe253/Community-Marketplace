@@ -5,6 +5,7 @@ var logins=[];
 
 const express = require("express");
 const fs = require('fs');
+var formidable = require('formidable');
 const bodyParser = require("body-parser"); // If we get data in a POST, this will parse it for us
 const { userInfo } = require("os");
 
@@ -12,34 +13,25 @@ const { userInfo } = require("os");
 // Returns the Express application object
 const app = express();
 const port = 3000;
-
 // Tell express object where to find your CSS, JS, and images
 app.use(express.static('public'));
 app.use('/css', express.static(__dirname + 'public/css'));
 app.use('/js', express.static(__dirname + 'public/js'));
 app.use('/img', express.static(__dirname + 'public/img'));
-
-
 // Register middleware to be used
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
-
-
 // Route definitions
 app.get("/", (req, res) => {
     console.log("got to login");
     res.sendFile(__dirname + '/views/login.html');
 });
-
-
 // Prints the request body so you can see the json data sent in the request
 // Sends back a response with the phrase "You did it!" for congratulations
 app.post("/postButton", (req, res) => {
     console.log(req.body);
     res.json({ text: "You did it!" });
-
 })
-
 app.get("/cart.png", (req, res) => {
     res.sendFile(__dirname + '/public/img/cart.png');
 });
@@ -59,7 +51,6 @@ app.get("/search", (req, res) => {
     console.log('got to search');
     res.sendFile(__dirname + '/views/search.html');
 });
-
 app.post("/createaccount", (req, res) => {
     console.log(req.body);
     logins.push(req.body);
@@ -67,8 +58,6 @@ app.post("/createaccount", (req, res) => {
     console.log(logins);
     res.sendFile(__dirname + '/views/grouplogin.html');
 });
-
-
 app.post("/createaccountgo", (req, res) => {
     //console.log(req.body);
     let user=req.body;
@@ -79,7 +68,6 @@ app.post("/createaccountgo", (req, res) => {
         LastName:user.LastName,
         GroupCode:user.GroupCode
     };
-
     let info = JSON.stringify(newUser);
     fs.appendFile('users.txt', (info + "\n"), function(err){
         if(err){
@@ -87,7 +75,6 @@ app.post("/createaccountgo", (req, res) => {
         }
         console.log("success"); 
     })
-
     // fs.readFile('users.txt', 'utf8', (err,data) => {
     //     if(err){
     //         console.err(err);
@@ -115,12 +102,10 @@ app.post("/logingo", (req, res) => {
     console.log('wrong');
     res.sendFile(__dirname + '/views/login.html');//send to login if wrong
 });
-
 // starts web server listening on localhost at port 3000
 app.listen(port, () => {
     console.log('Listening on port 3000...');
 });
-
 //takes user to cart from cart button
 app.get("/cart", (req, res) => {
     console.log('got to cart');
@@ -147,12 +132,13 @@ app.get("/loginpage", (req, res) => {
     console.log('got to login');
     res.sendFile(__dirname + '/views/login.html');
 });
-
 app.post("/newPost", (req, res) => {  //posting request stuff in progress - Jordan
     //console.log(req.body);
     let post=req.body;
     let newPost={
-        postText:post.Description
+        postText:post.Description,
+        postText:post.Description,
+        img:post.Image
     };
 
     let info = JSON.stringify(newPost);
@@ -164,4 +150,22 @@ app.post("/newPost", (req, res) => {  //posting request stuff in progress - Jord
         console.log("success"); 
     })
     res.sendFile(__dirname + '/views/home.html');
+})
+
+app.get("/getPosts", (req,res) => {
+    console.log("got getPosts");
+    fs.readFile('posts.txt', (err, data) => {
+        if (err) throw err;
+        console.log(data);
+        //data = JSON.stringify(data);
+        //let postsArray = data.split(/\r?\ n/);
+        //console.log(postsArray)
+        res.send(data);
+    });
+
+})
+
+app.post("/imageUpload", (req,res) => {
+    console.log("image upload worked");
+
 })
