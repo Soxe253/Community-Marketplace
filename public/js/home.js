@@ -29,12 +29,18 @@ async function load (){
             'Content-Type' : 'application/json'
         }
     });
-    let body = await response.json();
-    console.log(body);
-    let posts = body
-    document.getElementById("test").innerHTML = posts.postText;
-    document.getElementById("img").src = '/img/' + posts.img;
-    console.log(document.getElementById("img").src);
+    let body = await response.text();
+    let posts = body.split("\n");
+    console.log(posts);
+    console.log(posts[0]);
+    for(let i = 0; i < posts.length; i++){
+        let post = JSON.parse(posts[i]);
+        const text = document.createTextNode(post.postText);
+        const img = document.createElement('img');
+        img.src = '/img/' + post.img;
+        document.getElementById("test").appendChild(img);
+        document.getElementById("test").appendChild(text);
+    }
     }
     catch(error){
         console.error(error);
