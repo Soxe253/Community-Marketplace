@@ -71,39 +71,51 @@ app.post("/createaccount", (req, res) => {
 
 
 app.post("/createaccountgo", (req, res) => {
-    //console.log(req.body);
+    let success=true;
     let user=req.body;
-    let newUser={
-        Username:user.Username,
-        Password:user.Password,
-        FirstName:user.FirstName,
-        LastName:user.LastName,
-        GroupCode:user.GroupCode
-    };
-
-    let info = JSON.stringify(newUser);
-    fs.appendFile('community/users.txt', (info + "\n"), function(err){
-        if(err){
-            console.log(err);
+    let newUsername="{\"Username\":\""+user.Username+"\"";
+    console.log(newUsername);
+    //start
+    const readline=require('readline');
+    var r=readline.createInterface({
+        input: fs.createReadStream('users.txt')
+    });
+    r.on('line', function (text){//every line of users.txt
+        const userLength=newUsername.length;
+        if((text.substring(0,userLength))===newUsername){//if username matches, send to creataccount again
+            res.sendFile(__dirname + '/views/createaccount.html');//send to createaccount again if username already exists
+            success=false;
         }
-        console.log("success"); 
     })
-
-    // fs.readFile('users.txt', 'utf8', (err,data) => {
-    //     if(err){
-    //         console.err(err);
-    //         return;
-    //     }
-    //     console.log(data[0]);
-    // });
-    res.sendFile(__dirname + '/views/home.html');
+    r.on('close',function(){//if username doesn't already exist 
+        if(success===true){
+        let newUser={
+            Username:user.Username,
+            Password:user.Password,
+            FirstName:user.FirstName,
+            LastName:user.LastName,
+            GroupCode:user.GroupCode
+        };
+    
+        let info = JSON.stringify(newUser);
+        fs.appendFile('users.txt', (info + "\n"), function(err){
+            if(err){
+                console.log(err);
+                console.log("wrong: error"); 
+            }
+        })
+        console.log('success');
+    res.sendFile(__dirname + '/views/login.html');//send to login if correct
+        }
+    })
 });
+
 app.post("/logingo", (req, res) => {
     let userInfo = JSON.stringify(req.body);
     userInfo=userInfo.substring(0,((userInfo.length)-1));//take off end bracket of username and password entered
     const readline=require('readline');
     var r=readline.createInterface({
-        input: fs.createReadStream('community/users.txt')
+        input: fs.createReadStream('users.txt')
     });
     r.on('line', function (text){//every line of users.txt
         const userLength=userInfo.length;
@@ -119,6 +131,7 @@ app.post("/logingo", (req, res) => {
     })
     
 });
+
 
 // starts web server listening on localhost at port 3000
 app.listen(port, () => {
