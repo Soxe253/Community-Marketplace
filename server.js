@@ -183,8 +183,3 @@ app.get("/getPosts", (req,res) => {
     });
    
 })
-
-app.post("/imageUpload", (req,res) => {
-    console.log("image upload worked");
-
-})

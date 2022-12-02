@@ -1,3 +1,2 @@
-{"postText":"faefe","img":"eggs.jpg"}
-{"postText":"not oh no","img":"testImage.jpg"}
-{"postText":"a third post","img":"chickens.jpg"}
+{"postText":"post","img":"eggs.jpg"}
+{"postText":"ijmjij","img":"testImage.jpg"}
