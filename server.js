@@ -11,9 +11,6 @@ var logins=[];
 const express = require("express");
 
 const fs = require('fs');
-
-var formidable = require('formidable');
-
 const bodyParser = require("body-parser"); // If we get data in a POST, this will parse it for us
 
 const { userInfo } = require("os");
