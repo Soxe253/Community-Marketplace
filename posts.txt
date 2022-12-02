@@ -1,0 +1,2 @@
+{"postText":"test","img":"testImage.jpg"}
+{"postText":"oh no","img":"eggs.jpg"}
