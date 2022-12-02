@@ -5,6 +5,7 @@ var logins=[];
 
 const express = require("express");
 const fs = require('fs');
+var formidable = require('formidable');
 const bodyParser = require("body-parser"); // If we get data in a POST, this will parse it for us
 const { userInfo } = require("os");
 
@@ -152,7 +153,8 @@ app.post("/newPost", (req, res) => {  //posting request stuff in progress - Jord
     //console.log(req.body);
     let post=req.body;
     let newPost={
-        postText:post.Description
+        postText:post.Description,
+        img:post.Image
     };
 
     let info = JSON.stringify(newPost);
@@ -164,4 +166,22 @@ app.post("/newPost", (req, res) => {  //posting request stuff in progress - Jord
         console.log("success"); 
     })
     res.sendFile(__dirname + '/views/home.html');
+})
+
+app.get("/getPosts", (req,res) => {
+    console.log("got getPosts");
+    fs.readFile('posts.txt', (err, data) => {
+        if (err) throw err;
+        console.log(data);
+        //data = JSON.stringify(data);
+        //let postsArray = data.split(/\r?\ n/);
+        //console.log(postsArray)
+        res.send(data);
+    });
+   
+})
+
+app.post("/imageUpload", (req,res) => {
+    console.log("image upload worked");
+
 })
