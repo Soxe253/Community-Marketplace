@@ -8,12 +8,19 @@
 </head>
 <body>
     <form action="/newPost" method="post">
-        Upload Image!
-        <input type="file" name="Image" id="image"></input>
         Description for Post
         <input type="text" name="Description" id="desc"></input>
+        Upload Image!
+            <form action="/imageUpload" method="post">
+            <input type="file" accept="image/png, image/jpeg" name="Image" id="image" enctype="multipart/form-data"></input>
+            <input type="submit" value="Create Post" id="createPost"></input>
+            </form>
     </form>
-    <input type="submit" value="Create Post" id="createPost"></input>
+    <form action="/imageUpload" method="post">
+        <input type="file" accept="image/png, image/jpeg" name="Image" id="image" enctype="multipart/form-data"></input>
+        <input type="submit" value="Push me First" id="createImage"></input>
+    </form>
+    
     <script src="/js/post.js"></script>
 </body>
 </html>

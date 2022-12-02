@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 {"Username":"","Password":"","FirstName":"","LastName":""}
 {"Username":"3","Password":"4","FirstName":"1","LastName":"2"}
 {"Username":"quinnstober","Password":"password","FirstName":"Quinn","LastName":"Stober"}
 {"Username":"","Password":"","FirstName":"","LastName":""}
+=======
+>>>>>>> 5ad0a15c1b8de24fe2de57e4ee8cbc7e09346c86

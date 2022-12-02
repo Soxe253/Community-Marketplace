@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 {"postText":"test"}
+=======
+{"postText":"test","img":"testImage.jpg"}
+{"postText":"oh no","img":"eggs.jpg"}
+>>>>>>> 5ad0a15c1b8de24fe2de57e4ee8cbc7e09346c86
