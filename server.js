@@ -105,6 +105,7 @@ app.post("/createaccountgo", (req, res) => {
         console.log('success');
     res.sendFile(__dirname + '/views/login.html');//send to login if correct
         }
+    });
 });
 
 
@@ -120,7 +121,7 @@ app.post("/logingo", (req, res) => {
         if((text.substring(0,userLength))===userInfo){
             console.log('success');
             res.sendFile(__dirname + '/views/home.html');//send to home if correct
-}
+        }
     })
     
     r.on('close',function(){
@@ -128,7 +129,6 @@ app.post("/logingo", (req, res) => {
     res.sendFile(__dirname + '/views/login.html');//send to login if wrong
     })
     
-});
 });
 
 // starts web server listening on localhost at port 3000
@@ -180,3 +180,27 @@ app.post("/newPost", (req, res) => {  //posting request stuff in progress - Jord
     })
     res.sendFile(__dirname + '/views/home.html');
 })
+
+app.get("/getNewCode", (req,res) => {
+
+    let code=newCode();
+    //check if code already exists 
+    console.log(code);
+    res.send(code);
+    })
+    
+    function newCode(){
+        code="";
+        let i=0;
+        while(i<6){
+            let num=Math.random()*10;
+            code=code + num;
+            i++;
+            console.log(code);
+        }
+    return code;
+    }
+    
+    app.get("/createCode", (req,res) => {
+        res.sendFile(__dirname + '/views/createcode.html');
+    })
