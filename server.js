@@ -103,6 +103,12 @@ app.post("/createaccountgo", (req, res) => {
                 console.log("wrong: error"); 
             }
         })
+        fs.appendFile('users.txt', (info + "\n"), function(err){
+            if(err){
+                console.log(err);
+                console.log("wrong: error"); 
+            }
+        })
         console.log('success');
     res.sendFile(__dirname + '/views/login.html');//send to login if correct
         }
