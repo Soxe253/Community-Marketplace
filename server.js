@@ -12,6 +12,7 @@ const { userInfo } = require("os");
 // Returns the Express application object
 const app = express();
 const port = 3000;
+
 // Tell express object where to find your CSS, JS, and images
 app.use(express.static('public'));
 app.use('/css', express.static(__dirname + 'public/css'));
@@ -58,6 +59,7 @@ app.get("/search", (req, res) => {
     console.log('got to search');
     res.sendFile(__dirname + '/views/search.html');
 });
+
 app.post("/createaccount", (req, res) => {
     console.log(req.body);
     logins.push(req.body);
@@ -260,4 +262,38 @@ r.on('close',function(){
     
     app.get("/createCode", (req,res) => {
         res.sendFile(__dirname + '/views/createcode.html');
+    })
+
+    app.get("/getPosts", (req,res) => {
+
+        console.log("got getPosts");
+    
+        fs.readFile('posts.txt', (err, data) => {
+    
+            if (err) throw err;
+    
+            console.log(data);
+    
+            //data = JSON.stringify(data);
+    
+            //let postsArray = data.split(/\r?\ n/);
+    
+            //console.log(postsArray)
+    
+            res.send(data);
+    
+        });
+    
+       
+    
+    })
+    
+    
+    
+    app.post("/imageUpload", (req,res) => {
+    
+        console.log("image upload worked");
+    
+    
+    
     })
