@@ -70,6 +70,7 @@ app.post("/createaccount", (req, res) => {
 
 
 app.post("/createaccountgo", (req, res) => {
+    let user = JSON.stringify(req.body);
     let success=true;
     let newUsername="{\"Username\":\""+user.Username+"\"";
     console.log(newUsername);
