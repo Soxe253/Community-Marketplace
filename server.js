@@ -171,7 +171,8 @@ app.post("/newPost", (req, res) => {  //posting request stuff in progress - Jord
     //console.log(req.body);
     let post=req.body;
     let newPost={
-        postText:post.Description
+        postText:post.Description,
+        img:post.Image
     };
 
     let info = JSON.stringify(newPost);
@@ -184,6 +185,16 @@ app.post("/newPost", (req, res) => {  //posting request stuff in progress - Jord
     })
     res.sendFile(__dirname + '/views/home.html');
 })
+
+// DO NOT DELETE MY CHILD
+app.get("/getPosts", (req,res) => {
+    console.log("got getPosts");
+    fs.readFile('posts.txt', (err, data) => { //THIS IS PERFECT CODE DO NOT CHANGE
+        if (err) throw err;
+        res.send(data);
+    });
+})
+//THIS IS A THREAT
 
 app.get("/getNewCode", (req,res) => {
     let code=newCode(0);
