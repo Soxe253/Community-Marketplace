@@ -263,3 +263,37 @@ r.on('close',function(){
     app.get("/createCode", (req,res) => {
         res.sendFile(__dirname + '/views/createcode.html');
     })
+
+    app.get("/getPosts", (req,res) => {
+
+        console.log("got getPosts");
+    
+        fs.readFile('posts.txt', (err, data) => {
+    
+            if (err) throw err;
+    
+            console.log(data);
+    
+            //data = JSON.stringify(data);
+    
+            //let postsArray = data.split(/\r?\ n/);
+    
+            //console.log(postsArray)
+    
+            res.send(data);
+    
+        });
+    
+       
+    
+    })
+    
+    
+    
+    app.post("/imageUpload", (req,res) => {
+    
+        console.log("image upload worked");
+    
+    
+    
+    })
