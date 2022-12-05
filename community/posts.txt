@@ -1,1 +1,5 @@
 {"postText":"test"}
+{"postText":"test","img":""}
+{"postText":"test","img":"2 to the minus 2.JPG"}
+{"postText":"test","img":"testImage.jpg"}
+{"postText":"test","img":"testImage.jpg"}
