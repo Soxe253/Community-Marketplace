@@ -70,6 +70,7 @@ app.post("/createaccount", (req, res) => {
 
 
 app.post("/createaccountgo", (req, res) => {
+    let user = JSON.stringify(req.body);
     let success=true;
     let newUsername="{\"Username\":\""+user.Username+"\"";
     console.log(newUsername);
@@ -273,4 +274,38 @@ r.on('close',function(){
     
     app.get("/createCode", (req,res) => {
         res.sendFile(__dirname + '/views/createcode.html');
+    })
+
+    app.get("/getPosts", (req,res) => {
+
+        console.log("got getPosts");
+    
+        fs.readFile('posts.txt', (err, data) => {
+    
+            if (err) throw err;
+    
+            console.log(data);
+    
+            //data = JSON.stringify(data);
+    
+            //let postsArray = data.split(/\r?\ n/);
+    
+            //console.log(postsArray)
+    
+            res.send(data);
+    
+        });
+    
+       
+    
+    })
+    
+    
+    
+    app.post("/imageUpload", (req,res) => {
+    
+        console.log("image upload worked");
+    
+    
+    
     })
