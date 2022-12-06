@@ -1,5 +1,3 @@
 12345
 23456
-34567
-
-undefined
+34567undefined
