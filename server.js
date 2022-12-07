@@ -127,7 +127,7 @@ app.post("/logingo", (req, res) => {
         if((text.substring(0,userLength))===userInfo){
             console.log('success');
             userExists=true;
-            res.sendFile(__dirname + '/views/home.html');//send to home if correct
+            res.sendFile(__dirname + userInfo.GroupCode + '/views/home.html');//send to home if correct
         }
     })
     
