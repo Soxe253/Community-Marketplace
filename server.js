@@ -120,14 +120,14 @@ app.post("/logingo", (req, res) => {
     userInfo=userInfo.substring(0,((userInfo.length)-1));//take off end bracket of username and password entered
     const readline=require('readline');
     var r=readline.createInterface({
-        input: fs.createReadStream('12345/users.txt')
+        input: fs.createReadStream('users.txt')
     });
     r.on('line', function (text){//every line of users.txt
         const userLength=userInfo.length;
         if((text.substring(0,userLength))===userInfo){
             console.log('success');
             userExists=true;
-            res.sendFile(__dirname + '/views/groupcodeoptions.html');//send to home if correct
+            res.sendFile(__dirname + '/views/home.html');//send to home if correct
         }
     })
     
@@ -284,7 +284,7 @@ r.on('close',function(){
 
         console.log("got getPosts");
     
-        fs.readFile('12345/posts.txt', (err, data) => {
+        fs.readFile('posts.txt', (err, data) => {
     
             if (err) throw err;
     
@@ -313,3 +313,12 @@ r.on('close',function(){
     
     
     })
+
+    app.post("/receiveSearchText", (req, res) => {
+        console.log("got to /receiveSearchText");
+        let searchText=req.body.search;
+        console.log(searchText);
+          
+    });
+
+    
