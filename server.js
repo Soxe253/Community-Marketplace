@@ -5,6 +5,7 @@ const express = require("express");
 const fs = require('fs');
 const bodyParser = require("body-parser"); // If we get data in a POST, this will parse it for us
 const { userInfo } = require("os");
+const { group } = require("console");
 
 // Creates an Express application: https://expressjs.com/en/4x/api.html#app
 // Returns the Express application object
@@ -68,14 +69,17 @@ app.post("/createaccount", (req, res) => {
 
 
 app.post("/createaccountgo", (req, res) => {
-    let user = JSON.stringify(req.body);
+    //let user = JSON.stringify(req.body);
+    let user=req.body;
+    let groupcode = user.GroupCode;
     let success=true;
     let newUsername="{\"Username\":\""+user.Username+"\"";
     console.log(newUsername);
+    console.log(groupcode);
     //start
     const readline=require('readline');
     var r=readline.createInterface({
-        input: fs.createReadStream('12345/users.txt')
+        input: fs.createReadStream('users.txt')
     });
     r.on('line', function (text){//every line of users.txt
         const userLength=newUsername.length;
@@ -95,7 +99,7 @@ app.post("/createaccountgo", (req, res) => {
         };
 
         let info = JSON.stringify(newUser);
-        fs.appendFile('12345/users.txt', (info + "\n"), function(err){
+        fs.appendFile(groupcode +'/users.txt', (info + "\n"), function(err){
             if(err){
                 console.log(err);
                 console.log("wrong: error"); 
