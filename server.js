@@ -1,8 +1,6 @@
 /*
     The most basic Express web server running locally
 */
-var logins=[];
-
 const express = require("express");
 const fs = require('fs');
 const bodyParser = require("body-parser"); // If we get data in a POST, this will parse it for us
