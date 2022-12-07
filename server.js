@@ -64,7 +64,7 @@ app.post("/createaccount", (req, res) => {
     logins.push(req.body);
     console.log("success");
     console.log(logins);
-    res.sendFile(__dirname + '/views/grouplogin.html');
+    res.sendFile(__dirname + '/views/login.html');
 });
 
 
@@ -124,14 +124,14 @@ app.post("/logingo", (req, res) => {
     userInfo=userInfo.substring(0,((userInfo.length)-1));//take off end bracket of username and password entered
     const readline=require('readline');
     var r=readline.createInterface({
-        input: fs.createReadStream('12345/users.txt')
+        input: fs.createReadStream('users.txt')
     });
     r.on('line', function (text){//every line of users.txt
         const userLength=userInfo.length;
         if((text.substring(0,userLength))===userInfo){
             console.log('success');
             userExists=true;
-            res.sendFile(__dirname + '/views/groupcodeoptions.html');//send to home if correct
+            res.sendFile(__dirname + '/views/home.html');//send to home if correct
         }
     })
     
@@ -205,108 +205,6 @@ app.get("/getPosts", (req,res) => {
 })
 //THIS IS A THREAT
 
-app.get("/getNewCode", (req,res) => {
-    let code=newCode(0);
-    console.log("got new code:");
-    console.log(code);
-    console.log("add code to file");
-    fs.appendFile('communities.txt', (code + "\n"), function(err){
-        if(err){
-            console.log(err);
-            console.log("wrong: error"); 
-        }
-    })
-    console.log('success');
-res.sendFile(__dirname + '/views/login.html');//send to login if correct
-    });
-    
-function newCode(recursionNumber){
-    console.log("recursionNumber:");
-    console.log(recursionNumber);
-    console.log("function newCode called")
-//create new code
-let code=23456;
-        /* code="";
-        let i=0;
-        while(i<5){
-            let num=Math.random()*10;
-            num=parseInt(num);
-            code=code + num;
-            i++;
-        } */
-
-//check if code already exists
-const readline=require('readline');
-var r=readline.createInterface({
-    input: fs.createReadStream('communities.txt')
-});
-r.on('line', function (text){//every line of users.txt
-    console.log("text");
-    console.log(text);
-    console.log("code");
-    console.log(code);
-if(text===code){//if code already exists, recurse
-    console.log("recurse")
-    newCode(recursionNumber+1);//create new code, recurse  
-    console.log("finish recursion") 
-}
-})
-
-r.on('close',function(){
-    console.log(recursionNumber)
-    console.log("close")
-    return code;
-});
-};
-    /* //check if code already exists
-    let communityExists=false;
-    const readline=require('readline');
-    var r=readline.createInterface({
-        input: fs.createReadStream('communities.txt')
-    });
-    r.on('line', function (text){//every line of communities.txt
-        if(text===code){
-            console.log('already exists');
-            communityExists=true;
-        }
-    })
-    
-    r.on('close',function(){//at end of communities.txt
-        if (communityExists=false){//if community doesn't exist
-        console.log('wrong');
-    res.sendFile(__dirname + '/views/login.html');//send to login if wrong
-        }
-    })
-    return code; */
-
-    
-    app.get("/createCode", (req,res) => {
-        res.sendFile(__dirname + '/views/createcode.html');
-    })
-
-    app.get("/getPosts", (req,res) => {
-
-        console.log("got getPosts");
-    
-        fs.readFile('12345/posts.txt', (err, data) => {
-    
-            if (err) throw err;
-    
-            console.log(data);
-    
-            //data = JSON.stringify(data);
-    
-            //let postsArray = data.split(/\r?\ n/);
-    
-            //console.log(postsArray)
-    
-            res.send(data);
-    
-        });
-    
-       
-    
-    })
     
     
     
@@ -317,3 +215,12 @@ r.on('close',function(){
     
     
     })
+
+    app.post("/receiveSearchText", (req, res) => {
+        console.log("got to /receiveSearchText");
+        let searchText=req.body.search;
+        console.log(searchText);
+          
+    });
+
+    
