@@ -11,7 +11,8 @@ async function buttonListener(){
                 userName: document.querySelector("#username").value,
                 password: document.querySelector("#password").value,
                 firstName: document.querySelector("#firstName").value,
-                lastName: document.querySelector("#lastName").value
+                lastName: document.querySelector("#lastName").value,
+                groupCode: document.querySelector("#groupCode")
             }
             
             jsonUser = JSON.stringify(user);

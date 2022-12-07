@@ -68,7 +68,8 @@ app.post("/createaccount", (req, res) => {
 
 
 app.post("/createaccountgo", (req, res) => {
-    let user = JSON.stringify(req.body);
+    //let user = JSON.stringify(req.body);
+    user=req.body;
     let success=true;
     let newUsername="{\"Username\":\""+user.Username+"\"";
     console.log(newUsername);
@@ -213,10 +214,9 @@ app.get("/getPosts", (req,res) => {
     })
 
     app.post("/receiveSearchText", (req, res) => {
-        console.log("got to /receiveSearchText");
         let searchText=req.body.search;
         console.log(searchText);
-          
+        res.sendFile(__dirname + '/views/home.html');
     });
 
     
