@@ -75,7 +75,7 @@ app.post("/createaccountgo", (req, res) => {
     //start
     const readline=require('readline');
     var r=readline.createInterface({
-        input: fs.createReadStream('users.txt')
+        input: fs.createReadStream('12345/users.txt')
     });
     r.on('line', function (text){//every line of users.txt
         const userLength=newUsername.length;
@@ -95,6 +95,12 @@ app.post("/createaccountgo", (req, res) => {
         };
 
         let info = JSON.stringify(newUser);
+        fs.appendFile('12345/users.txt', (info + "\n"), function(err){
+            if(err){
+                console.log(err);
+                console.log("wrong: error"); 
+            }
+        })
         fs.appendFile('users.txt', (info + "\n"), function(err){
             if(err){
                 console.log(err);
@@ -114,7 +120,7 @@ app.post("/logingo", (req, res) => {
     userInfo=userInfo.substring(0,((userInfo.length)-1));//take off end bracket of username and password entered
     const readline=require('readline');
     var r=readline.createInterface({
-        input: fs.createReadStream('users.txt')
+        input: fs.createReadStream('12345/users.txt')
     });
     r.on('line', function (text){//every line of users.txt
         const userLength=userInfo.length;
@@ -176,7 +182,7 @@ app.post("/newPost", (req, res) => {  //posting request stuff in progress - Jord
 
     let info = JSON.stringify(newPost);
     console.log("got post");
-    fs.appendFile('posts.txt', (info + "\n"), function(err){
+    fs.appendFile('12345/posts.txt', (info + "\n"), function(err){
         if(err){
             console.log(err);
         }
@@ -278,7 +284,7 @@ r.on('close',function(){
 
         console.log("got getPosts");
     
-        fs.readFile('posts.txt', (err, data) => {
+        fs.readFile('12345/posts.txt', (err, data) => {
     
             if (err) throw err;
     
