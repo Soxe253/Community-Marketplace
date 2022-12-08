@@ -217,7 +217,7 @@ app.get("/getPosts", (req,res) => {
     app.post("/receiveSearchText", (req, res) => {
         let searchText=req.body.search;
         console.log(searchText);
-        res.sendFile(__dirname + '/views/home.html');
+        res.sendFile(__dirname + '/views/temporarysearchresult.html');
     });
 
     
