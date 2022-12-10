@@ -10,29 +10,30 @@
 </head>
 <body>
     <header>
+        <a href=""><button type="button" id="logoButton">
+            <img src="/img/logo.png" alt="Community Marketplace" id="logo" height="125">
+        </button></a>
+        <!-- <img src="/img/wreath.jpg" id="christmas" height="60"> -->
         <div>
-        <img src="/img/logo.jpg" alt="Community Marketplace" id="logo" height="60">
-        <img src="/img/wreath.jpg" id="christmas" height="60">
-        </div>
-        <a href="/createaccount"><button type="button" id="createaccount">
+        <a href="/createaccount"><button type="button" id="headerbutton">
             <p>Create Account</p>
         </button>
         </a>
+        </div>
     </header>
-    <h1>
+    <h1 id="title">
         Log In
     </h1>
-    <div class="center">
+    <section> <!--entry for account information-->
         <form action="/logingo" method="post" class="loginForm">
-            <template>Username or password incorrect</template>
-            <div class ="loginLabel">Username:</div>
+            <div class="loginLabel">Username:</div>
             <input type="text" name="Username" id="username" class="textbox"></input>
             <div class ="loginLabel">Password:</div>
             <input type="password" name="Password" id="password" class="textbox"></input>
             <a><input type="submit" value="Login" id="login"></input>
             </a>
+            </div>
         </form>
-</div>
-    <script src="/js/login.js"></script>
+    </section>
 </body>
 </html>
