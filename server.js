@@ -138,7 +138,8 @@ app.post("/logingo", (req, res) => {
     r.on('close',function(){//at end of users.txt
         if (userExists=false){//if user doesn't exist
         console.log('wrong');
-    res.sendFile(__dirname + '/views/login.html');//send to login if wrong
+        window.alert("Wrong Username or Password");
+        res.sendFile(__dirname + '/views/login.html');//send to login if wrong
         }
     })
     
