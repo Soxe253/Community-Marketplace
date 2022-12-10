@@ -9,19 +9,21 @@
     <title>Login</title>
 </head>
 <body>
-    <header> <!--page header-->
-        <img src="/img/logo.jpg" alt="Community Marketplace" id="logo" height="60">
+    <header> 
+        <a href=""><button type="button" id="logoButton">
+            <img src="/img/logo.png" alt="Community Marketplace" id="logo" height="125">
+        </button></a>
         <div>
-            <a href="/loginpage"><button type="button" id="login">
+            <a href="/loginpage"><button type="button" id="headerbutton">
                 <p>Log In</p>
             </button>
             </a>
         </div>
     </header>
-    <h1>
+    <h1 id="title">
         Create Account
     </h1>
-    <div class="center"> <!--entry for account information-->
+    <section> <!--entry for account information-->
         <form action="/createaccountgo" method="post" class="accountForm">
             <div class="accountLabel">First Name:</div>
             <input type="text" name="FirstName" id="firstName" class="textbox"></input>
@@ -33,10 +35,11 @@
             <input type="password" name="Password" id="password" class="textbox"></input>
             <div class="accountLabel">Group Code:</div>
             <input type="text" name="GroupCode" id="groupCode" class="textbox"></input>
-            <a href="/grouplogin"><input type="submit" value="Create Account" id="createAccount"></input> <!--calls creation of an account with the given information in the textboxes-->
-    </a>
+            <div><a href="/home"><input type="submit" value="Create Account" id="createAccount"></input> <!--calls creation of an account with the given information in the textboxes-->
+            </a>
+            </div>
         </form>
-</div>
+    </section>
     <script src="/js/createaccount.js"></script>
 </body>
 </html>

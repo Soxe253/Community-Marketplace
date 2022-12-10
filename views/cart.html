@@ -7,32 +7,39 @@
 </head>
 <body>
     <header>
-        <img src="/img/logo.jpg" alt="Community Marketplace" id="logo" height="60">
-        <div>
-            <form action="/receiveSearchText" method="post" class="header">
+        <a href="/home"><button type="button" id="logoButton">
+            <img src="/img/logo.png" alt="Community Marketplace" id="logo" height="125">
+        </button></a>
+
+        <div id="headerLinks">
+            <span><form action="/receiveSearchText" method="post" class="header">
                 <input type="text" name="search" id="search"></input>
                 <a href="/search"><input type="submit" value="Search" id="searchButton"></input> 
-            </a>
-            </form>
-            <a href="/profile"><button type="button" value="profile" id="profile">
-                <p>Profile</p>
-            </button></a>
-            <a href="/cart"><button type="button" id="cart">
-                <img src="/img/cart.png" alt="cart" width="30" height="30">
-            </button>
-            </a>
-        </div>
-    </header>
+            </a></form></span>
 
- <h1 id="yourCart">Your Cart</h1>
+            <span><a href="/profile"><button type="button" value="profile" id="profile">
+                <img src="/img/profile.png" alt="cart" width="50" height="50">
+            </button></a></span>
+
+            <span><a href="/cart"><button type="button" id="cart">
+                <img src="/img/cart.png" alt="cart" width="50" height="50">
+            </button></a></span>
+        </div>
+        
+    </header>
+<span id="body">
+
+ <h1 id="title">Your Cart</h1>
     
     <section>
         <p>Subtotal</p>
         <p>Tax</p>
         <br>
         <p>Total</p>
-    <button type="submit">Checkout</button>
+    <button type="submit" id="checkout">Checkout</button>
     </section>
+
+</span>
 </body>
 
 </html>

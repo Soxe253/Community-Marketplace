@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-{"Username":"soxe","Password":"123","FirstName":"Spencer","LastName":"Oxe"}
-{"Username":"bob10","Password":"321","FirstName":"bob","LastName":"smith"}
-{}
-{"Username":"","Password":"","FirstName":"","LastName":""}
-{"Username":"soxe","Password":"123","FirstName":"spencer","LastName":"oxe"}
-=======
->>>>>>> df23bf8e359354cd1ee072525dbe7cd3bb96e0c8
+
+{"Username":"","Password":"","FirstName":"","LastName":"","GroupCode":""}
+{"Username":"s","Password":"","FirstName":"","LastName":"","GroupCode":""}
+{"Username":"ddd","Password":"","FirstName":"","LastName":"","GroupCode":""}

@@ -7,43 +7,45 @@
     <link href="/css/profile_style.css" rel="stylesheet">
 </head>
 <body>
-    <header class="main">
-        <img src="/img/logo.jpg" alt="Community Marketplace" id="logo" height="60">
-        <div id="head">
-            <form action="/receiveSearchText" method="post" class="header">
+    <header>
+        <a href="/home"><button type="button" id="logoButton">
+            <img src="/img/logo.png" alt="Community Marketplace" id="logo" height="125">
+        </button></a>
+       
+        <div id="headerLinks">
+            <span><form action="/receiveSearchText" method="post" class="header">
                 <input type="text" name="search" id="search"></input>
                 <a href="/search"><input type="submit" value="Search" id="searchButton"></input> 
-            </a>
-            </form>
-            <a href="/profile"><button type="button" value="profile" id="profile">
-                <p>Profile</p>
-            </button></a>
-            <a href="/cart"><button type="button" id="cart">
-                <img src="/img/cart.png" alt="cart" width="30" height="30">
-            </button>
-            </a>
+            </a></form></span>
+
+            <span><a href="/profile"><button type="button" value="profile" id="profile">
+                <img src="/img/profile.png" alt="cart" width="50" height="50">
+            </button></a></span>
+
+            <span><a href="/cart"><button type="button" id="cart">
+                <img src="/img/cart.png" alt="cart" width="50" height="50">
+            </button></a></span>
         </div>
+        
     </header>
-   <div class="sidebar">
+
+
+   <section>
     <a href="">Messages</a>
     <a href="">Purchases</a>
     <a href="">Orders</a>
     <a href="">Settings</a>
     <a href="/post">New Post</a>
-    <a href="/grouplogin">Group Login</a>
     <a href="/help">Help</a>
-
-
-
-   </div>
+   </section>
 
    <div class="main">
-    <h1>Profile</h1>
-    <p>
-        <img src="/img/profile.png" alt="Profile" width="20" height="20">
-        <br/>Username
-        <br/>Edit Profile       
-    </p>
+    <h1 id="title">Profile</h1>
+    <span id="editprofile">
+        <img src="/img/profile.png" alt="Profile" width="40" height="40" id="profileimage">
+        <div>Username</div>
+        <div>Edit Profile</div>      
+    </span>
    </div>
 </body>
 </html>
