@@ -69,13 +69,10 @@ app.post("/createaccount", (req, res) => {
 
 
 app.post("/createaccountgo", (req, res) => {
-    //let user = JSON.stringify(req.body);
     let user=req.body;
-    let groupcode = user.GroupCode;
     let success=true;
-    let newUsername="{\"Username\":\""+user.Username+"\"";
+    let newUsername="{\"Username\":\""+req.body.Username+"\"";
     console.log(newUsername);
-    console.log(groupcode);
     //start
     const readline=require('readline');
     var r=readline.createInterface({
@@ -99,7 +96,7 @@ app.post("/createaccountgo", (req, res) => {
         };
 
         let info = JSON.stringify(newUser);
-        fs.appendFile(groupcode +'/users.txt', (info + "\n"), function(err){
+        fs.appendFile(newUser.GroupCode +'/users.txt', (info + "\n"), function(err){
             if(err){
                 console.log(err);
                 console.log("wrong: error"); 
@@ -112,7 +109,7 @@ app.post("/createaccountgo", (req, res) => {
             }
         })
         console.log('success');
-    res.sendFile(__dirname + '/views/login.html');//send to login if correct
+    res.sendFile(__dirname + '/views/home.html');//send to login if correct
         }
     });
 });
@@ -140,7 +137,8 @@ app.post("/logingo", (req, res) => {
     r.on('close',function(){//at end of users.txt
         if (userExists=false){//if user doesn't exist
         console.log('wrong');
-    res.sendFile(__dirname + '/views/login.html');//send to login if wrong
+        window.alert("Wrong Username or Password");
+        res.sendFile(__dirname + '/views/login.html');//send to login if wrong
         }
     })
     
@@ -219,10 +217,9 @@ app.get("/getPosts", (req,res) => {
     })
 
     app.post("/receiveSearchText", (req, res) => {
-        console.log("got to /receiveSearchText");
         let searchText=req.body.search;
         console.log(searchText);
-          
+        res.sendFile(__dirname + '/views/temporarysearchresult.html');
     });
 
     

@@ -1,48 +1,99 @@
+/* full page*/
+html{
+    background-color:white;
+}
+
+/* full header container */
 header{
-    display: flex;
-    border: 2px rgb(128, 179, 126) solid;
-    padding: 10px;
-    line-height: 20px;
-    justify-content: space-between;
-    gap: 10px;
-    font-size:large;
-}
-
-div {
+    position:relative;
     display:flex;
-    justify-content: space-between;
-    align-items: center;
+    border-bottom: 7px #FFAE00 solid;
+    padding:5px;
+    justify-content:space-between;
+}
+header:before {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 0px;
+    border-bottom: 7px #00152E solid;
+  }
+
+
+/* header (only links) container */
+#headerLinks {
+    display:flex;
+    justify-content:space-between;
+    line-height:90px;
+justify-content:flex-end;
 }
 
-#search {
-    height: 15px;
-    align-self: center;
-    display:block;
-    width:85%;
+/* links (items)*/
+#headerLinks > span {
+   padding: 5px;
 }
 
-#profile {
-    height: 50px;
-    width: 50px;
-    border-radius: 25px;
+#logoButton{
+    background:none;
+    border:0px;
+}
+
+#cart, #profile{
+    height:100px;
+    background:none;
+    border:0px;
+}
+
+/* both parts of search */
+#searchButton, #search{
+    border:3px black solid;
+    border-radius:7px;
+    background:#FF8400;
+}
+
+/* search button */
+input[type=submit]{
+    border:3px black solid;
+    border-radius:7px;
+    font-size:115%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight:bold;
+}
+
+/* Your Cart title */
+#title{
+    display:flex;
+    justify-content:center;
+    color:#00152E;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    text-shadow: -1px 0 #FFAE00, 0 1px #FFAE00, 1px 0 #FFAE00, 0 -1px #FFAE00;
 }
 
 section{
-   display: flex;
-   padding-right: 15%;
+    display: flex;
+    border: 3px black solid;
+    border-radius:20px;
+    padding:5%;
+    padding-right: 15%;
    padding-left: 7%;
    flex-direction: column;
    float:right;
+   font-family: Georgia, 'Times New Roman', Times, serif;
    font-size:larger;
-}
-section>button{
-    font-size:larger;
-}
-#yourCart{
-    display:flex;
-    justify-content: center;
-}
-#cart{
-    height:50px;
-    width:50px;
-}
+   font-weight: bold;
+ }
+
+ #checkout{
+    border:3px black solid;
+    border-radius:7px;
+    font-size:115%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight:bold;
+    background:#FFAE00;
+ }
+
+ 

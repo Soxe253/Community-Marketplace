@@ -7,21 +7,25 @@
 </head>
 <body>
     <header>
-        <img src="/img/logo.jpg" alt="Community Marketplace" id="logo" height="60">
-        <div>
-            <form method="post" action="/receiveSearchText">
+        <a href="/home"><button type="button" id="logoButton">
+            <img src="/img/logo.png" alt="Community Marketplace" id="logo" height="125">
+        </button></a>
+
+        <div id="headerLinks">
+            <span><form action="/receiveSearchText" method="post" class="header">
                 <input type="text" name="search" id="search"></input>
-                <a href="/search"><input type="submit" value="Search" id="searchButton"></input>
-                </a>
-            </form>       
-            <a href="/profile"><button type="button" value="profile" id="profile">
-                <p>Profile</p>
-            </button></a>
-            <a href="/cart"><button type="button" id="cart">
-                <img src="/img/cart.png" alt="cart" width="30" height="30">
-            </button>
-            </a>
+                <a href="/search"><input type="submit" value="Search" id="searchButton"></input> 
+            </a></form></span>
+
+            <span><a href="/profile"><button type="button" value="profile" id="profile">
+                <img src="/img/profile.png" alt="cart" width="50" height="50">
+            </button></a></span>
+
+            <span><a href="/cart"><button type="button" id="cart">
+                <img src="/img/cart.png" alt="cart" width="50" height="50">
+            </button></a></span>
         </div>
+        
     </header>
 
     <!-- <form method="post" action="/getPostsFromSearch" id="posts">
