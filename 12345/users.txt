@@ -1,2 +1,1 @@
-
-{}
+{"Username":"soxe","Password":"253","FirstName":"Spencer","LastName":"Oxe","GroupCode":"12345"}
