@@ -126,8 +126,6 @@ app.post("/logingo", (req, res) => {
     r.on('line', function (text){//every line of users.txt
         const userLength=userInfo.length;
         if((text.substring(0,userLength))===userInfo){
-            let userJSON = JSON.parse(userInfo);
-            let groupCode = userJSON.groupCode;
             console.log('success');
             userExists=true;
             res.sendFile(__dirname + '/views/home.html');//send to home if correct
