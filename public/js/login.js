@@ -11,15 +11,9 @@ async function buttonListener(){
                 userName: document.querySelector("#username").value,
                 password: document.querySelector("#password").value
             }
-            
-            jsonUser = JSON.stringify(user);
+            localStorage.setItem('Username', JSON.stringify(user.userName));
+            localStorage.setItem('Password', JSON.stringify(user.password));
 
-            console.log(jsonUser);
-            jsUser = JSON.parse(jsonUser);
-            console.log(jsUser.userName + " " + jsUser.password);
-            localStorage.setItem('Username', 'test');
-            console.log(localStorage.getItem('Username'));
-            window.location = "/views/home.html";
         })
 }
 
