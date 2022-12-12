@@ -1,0 +1,152 @@
+html{
+    background-color:white;
+}
+
+/* full header container */
+header{
+    position:relative;
+    display:flex;
+    border-bottom: 7px #FFAE00 solid;
+    padding:5px;
+    justify-content:space-between;
+}
+header:before {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 0px;
+    border-bottom: 7px #00152E solid;
+  }
+
+
+/* header (only links) container */
+#headerLinks {
+    display:flex;
+    justify-content:space-between;
+    line-height:90px;
+justify-content:flex-end;
+}
+
+/* links (items)*/
+#headerLinks > span {
+   padding: 5px;
+}
+
+#title{
+    display:flex;
+    justify-content:center;
+    color:#00152E;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    text-shadow: -1px 0 #FFAE00, 0 1px #FFAE00, 1px 0 #FFAE00, 0 -1px #FFAE00;
+}
+
+#logoButton{
+    background:none;
+    border:0px;
+}
+
+#headerbutton{
+    border:3px black solid;
+    border-radius:7px;
+    background:#FF8400;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight:bolder;
+    font-size:100%;
+    align-content:center;
+}
+
+section{
+    display: flex;
+    border: 3px black solid;
+    border-radius:20px;
+   padding:5%;
+   flex-direction: column;
+   width:25%;
+   float:center;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-weight: bold;
+   margin:0px 0px 0px 32%;
+ }
+
+ form > div{
+    padding-top:5%;
+ }
+ #createAccount{
+    border:3px black solid;
+    border-radius:7px;
+    font-size:115%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight:bold;
+    background:#FFAE00;
+ }
+/* header{
+    display: flex;
+    border: 2px rgb(128, 179, 126) solid;
+    padding: 10px;
+    line-height: 20px;
+    justify-content: space-between;
+    gap: 10px;
+    font-size:large;
+}
+h1{
+    display:flex;
+    justify-content:center;
+}
+
+#title {
+    align-self: flex-start;
+}
+
+div {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#search {
+    height: 15px;
+    align-self: center;
+    display:block;
+    width:50%;
+}
+
+#profile {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+}
+
+#template {
+    color: red;
+}
+
+.center{
+    display: flex;
+    margin: auto;
+    width: 30%;
+    height: 50%;
+    border: 5px green;
+    padding: 150px;
+    flex-direction: column;
+}
+
+.textbox{
+    height: 18px;
+    width: 300px;
+}
+
+.accountForm{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.accountLabel{
+    padding-bottom: 1rem;
+}
+
+
+ */
