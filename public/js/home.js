@@ -33,7 +33,7 @@ async function load (){
     let posts = body.split("\n");
     console.log(posts);
     console.log(posts[0]);
-    for(let i = 0; i < posts.length; i++){
+    for(let i = 0; i < posts.length - 1; i++){
         let post = JSON.parse(posts[i]);
         const text = document.createTextNode(post.postText);
         const img = document.createElement('img');

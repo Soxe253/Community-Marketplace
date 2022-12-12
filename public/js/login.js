@@ -13,6 +13,8 @@ async function buttonListener(){
             }
             localStorage.setItem('Username', JSON.stringify(user.userName));
             localStorage.setItem('Password', JSON.stringify(user.password));
+            let groupcode = user.GroupCode;
+            localStorage.setItem('GroupCode', JSON.stringify(groupcode));
 
         })
 }
