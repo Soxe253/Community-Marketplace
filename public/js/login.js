@@ -13,9 +13,17 @@ async function buttonListener(){
             }
             localStorage.setItem('Username', JSON.stringify(user.userName));
             localStorage.setItem('Password', JSON.stringify(user.password));
-            let groupcode = user.GroupCode;
-            localStorage.setItem('GroupCode', JSON.stringify(groupcode));
-
+            try{
+                const response = await fetch('/getPosts', {
+                    method: 'GET'
+                });
+                let groupcode = response.text(); 
+                localStorage.setItem('GroupCode', JSON.stringify(groupcode)); 
+            }
+            
+            catch(error){
+                console.error(error);
+            }
         })
 }
 
