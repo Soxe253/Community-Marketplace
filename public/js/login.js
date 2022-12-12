@@ -13,7 +13,7 @@ async function buttonListener(){
             }
             
             jsonUser = JSON.stringify(user);
-            localStorage.setItem("currentloggedin", jsonUser.userName);
+            localStorage.setItem("username", userName);
             console.log(jsonUser);
             jsUser = JSON.parse(jsonUser);
             console.log(jsUser.userName + " " + jsUser.password);
