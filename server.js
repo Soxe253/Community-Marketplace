@@ -96,12 +96,12 @@ app.post("/createaccountgo", (req, res) => {
         };
 
         let info = JSON.stringify(newUser);
-        /* fs.appendFile(info +'/users.txt', (info + "\n"), function(err){
+        fs.appendFile(newUser.GroupCode +'/users.txt', (info + "\n"), function(err){
             if(err){
                 console.log(err);
                 console.log("wrong: error"); 
             }
-        }) */
+        })
         fs.appendFile('users.txt', (info + "\n"), function(err){
             if(err){
                 console.log(err);
