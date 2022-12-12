@@ -48,6 +48,4 @@ async function load (){
 };
 
 load();
-localStorage.setItem('Username', 'Test');
-console.log(localStorage.getItem('Username'));
 
