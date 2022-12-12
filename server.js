@@ -204,7 +204,9 @@ app.get("/getPosts", (req,res) => {
     });
 })
 //THIS IS A THREAT
-
+app.get("/getGroupCode", (req,res) => {
+    
+})
     
     
     
