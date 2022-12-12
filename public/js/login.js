@@ -17,6 +17,8 @@ async function buttonListener(){
             console.log(jsonUser);
             jsUser = JSON.parse(jsonUser);
             console.log(jsUser.userName + " " + jsUser.password);
+            localStorage.setItem('Username', 'test');
+            console.log(localStorage.getItem('Username'));
             window.location = "/views/home.html";
         })
 }
