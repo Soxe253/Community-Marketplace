@@ -2,3 +2,5 @@
 {}
 {}
 {}
+{"Username":"jordan3vh","Password":"test","FirstName":"Jordan","LastName":"Verkh-Haskell","GroupCode":"12345"}
+{"Username":"jordan3vh","Password":"test","FirstName":"Jordan","LastName":"Verkh-Haskell","GroupCode":"12345"}
