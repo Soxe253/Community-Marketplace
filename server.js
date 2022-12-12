@@ -6,7 +6,7 @@ const fs = require('fs');
 const bodyParser = require("body-parser"); // If we get data in a POST, this will parse it for us
 const { userInfo } = require("os");
 const { group } = require("console");
-let USER;
+
 // Creates an Express application: https://expressjs.com/en/4x/api.html#app
 // Returns the Express application object
 const app = express();
@@ -128,7 +128,6 @@ app.post("/logingo", (req, res) => {
         if((text.substring(0,userLength))===userInfo){
             console.log('success');
             userExists=true;
-            USER = JSON.parse(text);
             res.sendFile(__dirname + '/views/home.html');//send to home if correct
         }
     })
@@ -156,7 +155,6 @@ app.get("/cart", (req, res) => {
 //takes user to homepage from login
 app.get("/home", (req, res) => {
     console.log('got to homepage');
-    console.log(USER);
     res.sendFile(__dirname + '/views/home.html');
 });
 app.get("/profile", (req, res) => {
