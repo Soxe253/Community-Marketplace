@@ -33,13 +33,22 @@ async function load (){
     let posts = body.split("\n");
     for(let i = 0; i < posts.length - 1; i++){
         let post = JSON.parse(posts[i]);
-        const title = document.createTextNode(post.postTitle);
-        const text = document.createTextNode(post.postText);
-        const img = document.createElement('img');
+        let postElement=document.createElement('div');
+        postElement.id="postelement";
+        let titleParent= document.createElement('a');
+        titleParent.id="postTitle";
+        let title = document.createTextNode(post.postTitle);
+        let descriptionParent= document.createElement('a');
+        descriptionParent.id="postDescription";
+        let description = document.createTextNode(post.postText);
+        let img = document.createElement('img');
         img.src = '/img/' + post.img;
+        document.getElementById("posts").appendChild(postElement);
+        document.getElementById("postelement").appendChild(titleParent);
+        document.getElementById("postelement").appendChild(descriptionParent);
         document.getElementById("postTitle").appendChild(title);
-        document.getElementById("postImage").appendChild(img);
-        document.getElementById("postDescription").appendChild(text);
+        document.getElementById("postDescription").appendChild(description);
+        document.getElementById("postelement").appendChild(img);
     }
     }
     catch(error){

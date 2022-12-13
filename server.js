@@ -249,7 +249,7 @@ app.get("/getPosts", (req,res) => {
     })
     
     r.on('close',function(){//has made array of post objects
-        console.log("go0t to close")
+        console.log("got to close")
         let i=0;
         const postsLength=postsArray.length;
         while(i<postsLength){
