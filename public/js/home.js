@@ -31,8 +31,6 @@ async function load (){
     });
     let body = await response.text();
     let posts = body.split("\n");
-    console.log(posts);
-    console.log(posts[0]);
     for(let i = 0; i < posts.length - 1; i++){
         let post = JSON.parse(posts[i]);
         const title = document.createTextNode(post.postTitle);
