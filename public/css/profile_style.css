@@ -100,14 +100,19 @@ section{
  #profileimage{
     padding-left:2%;
  }
-
+span{
+    display:flex;
+    flex-direction: column;
+}
  span > div{
     color:#00152E;
     font-size:130%;
     font-weight:bold;
-    text-decoration: underline;
     padding:1% 2% 0% 2%;
     align-content:center;
+ }
+ #editProfile{
+    text-decoration: underline;
  }
 
 /* header{
