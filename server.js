@@ -128,7 +128,7 @@ app.post("/logingo", (req, res) => {
         if((text.substring(0,userLength))===userInfo){
             console.log('success');
             userExists=true;
-            res.sendFile(__dirname + '/views/home.html');//send to home if correct
+            //res.sendFile(__dirname + '/views/home.html');//send to home if correct
         }
     })
     
@@ -202,9 +202,24 @@ app.get("/getPosts", (req,res) => {
     });
 })
 //THIS IS A THREAT
-app.get("/getGroupCode", (req,res) => {
-    //all the bullshit
-})
+
+    app.post("/getGroupCode", (req,res) => {
+        console.log("got to get group code");
+        let user = req.body;
+        fs.readFile('users.txt', (err,data) => {
+            if (err) throw err;
+            let newData = data.toString();
+            let users = newData.split('\n');
+            let i = 0;
+            while(i , users.length){
+                users = JSON.parse(users[i]);
+                if(user.userName === users.Username){
+                    return res.send(JSON.stringify(users.GroupCode));
+                }
+                i++;
+            }
+        })
+    })
     
     
     
