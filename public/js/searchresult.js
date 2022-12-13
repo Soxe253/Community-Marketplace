@@ -16,8 +16,8 @@ async function load (){
         const text = document.createTextNode(post.postText);
         const img = document.createElement('img');
         img.src = '/img/' + post.img;
-        document.getElementById("test").appendChild(img);
         document.getElementById("test").appendChild(title);
+        document.getElementById("test").appendChild(img);
         document.getElementById("test").appendChild(text);
     }
     }
