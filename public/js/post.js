@@ -1,5 +1,11 @@
 window.addEventListener("DOMContentLoaded", buttonListener);
 
+let username = localStorage.getItem('Username');
+username = username.substring(1, username.length - 1);
+document.getElementById('username').value = username;
+
+
+
 async function buttonListener() {
     let button = document.querySelector("#createPost"); //sets the button to listen for a new post
         button.addEventListener("click", async function(){
