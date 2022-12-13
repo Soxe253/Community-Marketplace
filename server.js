@@ -178,8 +178,10 @@ app.post("/newPost", (req, res) => {  //posting request stuff in progress - Jord
     //console.log(req.body);
     let post=req.body;
     let newPost={
+        postTitle:post.Title,
         postText:post.Description,
-        img:post.Image
+        img:post.Image,
+        score:"0"
     };
 
     let info = JSON.stringify(newPost);
@@ -196,7 +198,7 @@ app.post("/newPost", (req, res) => {  //posting request stuff in progress - Jord
 // DO NOT DELETE MY CHILD
 app.get("/getPosts", (req,res) => {
     console.log("got getPosts");
-    fs.readFile('posts.txt', (err, data) => { //THIS IS PERFECT CODE DO NOT CHANGE
+    fs.readFile('12345/posts.txt', (err, data) => { //THIS IS PERFECT CODE DO NOT CHANGE
         if (err) throw err;
         res.send(data);
     });
@@ -218,8 +220,72 @@ app.get("/getGroupCode", (req,res) => {
 
     app.post("/receiveSearchText", (req, res) => {
         let searchText=req.body.search;
-        console.log(searchText);
-        res.sendFile(__dirname + '/views/temporarysearchresult.html');
+        searchText=searchText.toLowerCase();
+    const readline=require('readline');
+    var r=readline.createInterface({
+        input: fs.createReadStream('12345/posts.txt')
+    });
+    let postsArray=[];
+    r.on('line', function (text){//every line of posts.txt
+        object=JSON.parse(text);
+        object.postTitle=object.postTitle.toLowerCase();
+        object.postText=object.postText.toLowerCase();
+        postsArray.push(object);
+    })
+    
+    r.on('close',function(){//has made array of post objects
+        console.log("go0t to close")
+        let i=0;
+        const postsLength=postsArray.length;
+        while(i<postsLength){
+            let points = 0;
+        
+            if (postsArray[i].postTitle.includes(searchText)) {
+                points += 2;
+            }
+        
+            if (postsArray[i].postText.includes(searchText)) {
+                points += 1;
+            }
+            postsArray[i].score=points;
+            i++;
+        }
+        //postsArray.sort((b, a) => a.points - b.points);
+        function compare( a, b ) {
+            if ( a.score < b.score){
+              return 1;
+            }
+            if ( a.score > b.score ){
+              return -1;
+            }
+            return 0;
+          }
+          
+        postsArray.sort(compare);
+        console.log(postsArray);
+    let j=0;
+    //clear file
+    const fs = require('fs');
+    fs.truncate('12345/posts.txt', 0, function(){console.log('done')});
+    while (j<postsArray.length){
+        let newPost=postsArray[j];
+        console.log("newPost");
+        console.log(newPost);
+        newPost.score="0";
+        let info = JSON.stringify(newPost);
+        //add posts again in new order 
+        fs.appendFile('12345/posts.txt', (info + "\n"), function(err){
+        if(err){
+            console.log(err);
+        }
+        console.log("success"); 
+    })
+    j++;
+}
+    res.sendFile(__dirname + '/views/home.html');
+    })
+       // res.sendFile(__dirname + '/views/temporarysearchresult.html');
     });
 
-    
+    //array of JSON objects, search trhough array item by item first item is given number 0, if it has the word -1 if it doesn't plus 1
+    //index array, if equals 0, equals 1, equals 2, etc., add to array, recreate array 
