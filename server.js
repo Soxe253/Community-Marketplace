@@ -182,12 +182,13 @@ app.post("/newPost", (req, res) => {  //posting request stuff in progress - Jord
         postText:post.Description,
         img:post.Image,
         Username: post.Username,
+        GroupCode: post.Groupcode,
         score:"0"
     };
 
     let info = JSON.stringify(newPost);
     console.log("got post");
-    fs.appendFile('12345/posts.txt', (info + "\n"), function(err){
+    fs.appendFile(newPost.GroupCode + '/posts.txt', (info + "\n"), function(err){
         if(err){
             console.log(err);
         }
