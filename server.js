@@ -207,7 +207,7 @@ app.get("/getPosts", (req,res) => {
 })
 //THIS IS A THREAT
 //Good code. Sends group code back to login.js
-    app.post("/getGroupCode", (req,res) => {
+    app.post("/getUserInfo", (req,res) => {
         console.log("got to get group code");
         let user = req.body;
         fs.readFile('users.txt', (err,data) => {
