@@ -181,6 +181,8 @@ app.post("/newPost", (req, res) => {  //posting request stuff in progress - Jord
         postTitle:post.Title,
         postText:post.Description,
         img:post.Image,
+        Username:post.Username,
+        GroupCode:post.Groupcode,
         score:"0"
     };
 

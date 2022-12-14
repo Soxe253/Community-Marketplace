@@ -4,3 +4,5 @@
 {"postTitle":"Name Necklaces","postText":"I am selling custom name necklaces","img":"necklace.png","score":"0"}
 {"postTitle":"Scented Candles","postText":"I make my own candles cause I have time for that ","img":"candle.jpeg","score":"0"}
 {"postTitle":"Sticker Pack","postText":"super cool sticker pack yay please buy","img":"stickers.jpeg","score":"0"}
+{"postTitle":"I am a test","postText":"username test","img":"wreath.jpg","score":"0"}
+{"postTitle":"username test 2","postText":"test","img":"testImage.jpg","Username":"soxe","GroupCode":"12345","score":"0"}
