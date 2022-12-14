@@ -213,12 +213,12 @@ app.get("/getPosts", (req,res) => {
         fs.readFile('users.txt', (err,data) => {
             if (err) throw err;
             let newData = data.toString();
-            let users = newData.split('\n');
+            let usersArray = newData.split('\n');
             let i = 0;
-            while(i , users.length){
-                users = JSON.parse(users[i]);
+            while(i , usersArray.length){
+                users = JSON.parse(usersArray[i]);
                 if(user.userName === users.Username){
-                    return res.send(JSON.stringify(users.GroupCode));
+                    return res.json(users);
                 }
                 i++;
             }

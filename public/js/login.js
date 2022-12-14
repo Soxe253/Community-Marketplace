@@ -11,8 +11,9 @@ window.addEventListener("DOMContentLoaded", buttonListener);
                 userName: document.querySelector("#username").value,
                 password: document.querySelector("#password").value
             }
-            localStorage.setItem('Username', JSON.stringify(user.userName));
-            localStorage.setItem('Password', JSON.stringify(user.password));
+            
+            localStorage.setItem('Username', user.userName);
+            localStorage.setItem('Password', user.password);
            let body = JSON.stringify(user);
            console.log(body);         
                     let response = await fetch('/getGroupCode', {
@@ -21,10 +22,12 @@ window.addEventListener("DOMContentLoaded", buttonListener);
                             'Content-Type': 'application/json'
                         },
                         body: body
-                    });
-                    let groupCode = await response.text();
-                localStorage.setItem('GroupCode', groupCode); 
-            
+                    }); 
+                    let userInfo = await response.json();
+                    //let groupCode = await response.text();
+                    console.log(userInfo);
+                localStorage.setItem('GroupCode',userInfo.GroupCode);
+                localStorage.setItem('Name',userInfo.FirstName +" "+ userInfo.LastName); 
         })
 }
 
