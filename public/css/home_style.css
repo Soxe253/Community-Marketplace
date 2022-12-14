@@ -76,6 +76,14 @@ input[type=submit]{
     font-weight:bold;
 }
 
+#posts{
+    display: grid;
+    gap: 5px 25px;
+    grid-template-rows: 20px;
+    justify-content:space-evenly;
+}
+
+
 
 /* header{
     display: flex;
