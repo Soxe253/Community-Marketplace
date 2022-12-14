@@ -77,12 +77,45 @@ input[type=submit]{
 }
 
 #posts{
-    display: grid;
-    gap: 5px 25px;
-    grid-template-rows: 20px;
-    justify-content:space-evenly;
+    column-count:3;
+    padding:5%;
+
 }
 
+#postelement{
+    border:7px #00152E solid;
+    border-radius:5%;
+    width:300px;
+    height:300px;
+    display:flex;
+    justify-content:space-evenly;
+    padding:10%;
+}
+
+#postelement > img{
+    display:flex;
+    object-fit: cover;
+    width: 60%;
+    height: 60%;
+border:5px #FFAE00 solid;
+border-radius:5%;
+background:white;
+
+}
+
+#textelement{
+    display:flex;
+    flex-direction:column;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#postTitle{
+    color:#00152E;
+    font-weight: bolder;
+    font-size:larger;
+    text-shadow: -1px 0 #FFAE00, 0 1px #FFAE00, 1px 0 #FFAE00, 0 -1px #FFAE00;
+    padding-bottom:5%;
+}
 
 
 /* header{
