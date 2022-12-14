@@ -15,15 +15,15 @@ window.addEventListener("DOMContentLoaded", buttonListener);
             localStorage.setItem('Password', JSON.stringify(user.password));
            let body = JSON.stringify(user);
            console.log(body);         
-                    let response = await fetch('/getGroupCode', {
-                        method: "POST",
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: body
-                    });
-                    let groupCode = await response.text();
-                localStorage.setItem('GroupCode', groupCode); 
+                let response = await fetch('/getUserInfo', {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: body
+                });
+                let groupCode = await response.text();
+                localStorage.setItem('GroupCode', groupCode);
             
         })
 }

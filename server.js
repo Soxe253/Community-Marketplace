@@ -181,6 +181,8 @@ app.post("/newPost", (req, res) => {  //posting request stuff in progress - Jord
         postTitle:post.Title,
         postText:post.Description,
         img:post.Image,
+        Username:post.Username,
+        GroupCode:post.Groupcode,
         score:"0"
     };
 
@@ -216,13 +218,12 @@ app.get("/getPosts", (req,res) => {
             while(i , users.length){
                 users = JSON.parse(users[i]);
                 if(user.userName === users.Username){
-                    return res.send(JSON.stringify(users.GroupCode));
+                    return res.send(JSON.stringify(users[i]));
                 }
                 i++;
             }
         })
     })
-    
     
     
     app.post("/imageUpload", (req,res) => {
