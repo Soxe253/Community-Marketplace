@@ -2,3 +2,4 @@
 {"Username":"bsmith","Password":"123","FirstName":"bob","LastName":"smith","GroupCode":"12345"}
 {"Username":"jordan3vh","Password":"test","FirstName":"Jordan","LastName":"Verkh-Haskell","GroupCode":"12345"}
 {"Username":"f","Password":"","FirstName":"","LastName":"","GroupCode":""}
+{"Username":"username","Password":"","FirstName":"","LastName":"","GroupCode":""}

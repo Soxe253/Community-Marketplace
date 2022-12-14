@@ -35,6 +35,8 @@ async function load (){
         let post = JSON.parse(posts[i]);
         let postElement=document.createElement('div');
         postElement.id="postelement";
+        let textElement=document.createElement('span');
+        textElement.id="textelement";
         let titleParent= document.createElement('a');
         titleParent.id="postTitle";
         let title = document.createTextNode(post.postTitle);
@@ -43,12 +45,13 @@ async function load (){
         let description = document.createTextNode(post.postText);
         let img = document.createElement('img');
         img.src = '/img/' + post.img;
+        titleParent.appendChild(title);
+        descriptionParent.appendChild(description);
+        textElement.appendChild(titleParent);
+        textElement.appendChild(descriptionParent);
+        postElement.appendChild(textElement);
+        postElement.appendChild(img);
         document.getElementById("posts").appendChild(postElement);
-        document.getElementById("postelement").appendChild(titleParent);
-        document.getElementById("postelement").appendChild(descriptionParent);
-        document.getElementById("postTitle").appendChild(title);
-        document.getElementById("postDescription").appendChild(description);
-        document.getElementById("postelement").appendChild(img);
     }
     }
     catch(error){
