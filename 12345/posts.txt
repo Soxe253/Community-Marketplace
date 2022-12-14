@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 {"postTitle":"Boticelli Lighter","postText":"I am a serious business woman","img":"lighter.png","score":"0"}
 {"postTitle":"Eggs for Sale","postText":"please buy my eggs","img":"eggs.jpg","score":"0"}
 {"postTitle":"Tattoos","postText":"Super flawless tatties made by me ! super sick super profeshional","img":"tattoo.jpeg","score":"0"}
 {"postTitle":"Name Necklaces","postText":"I am selling custom name necklaces","img":"necklace.png","score":"0"}
 {"postTitle":"Scented Candles","postText":"I make my own candles cause I have time for that ","img":"candle.jpeg","score":"0"}
 {"postTitle":"Sticker Pack","postText":"super cool sticker pack yay please buy","img":"stickers.jpeg","score":"0"}
+=======
+{"postTitle":"lighters","postText":"i am not selling stickers but i said the word","img":"testImage.jpg","score":"0"}
+{"postTitle":"stickers","postText":"i am selling stickers ","img":"eggs.jpg","score":"0"}
+>>>>>>> baaba2307e5df3be0c63d2e4780ad7ff0d7d7468
