@@ -8,10 +8,14 @@
 </head>
 <body>
     <form action="/newPost" method="post">
-        Description for Post
+        Title for Post
+        <input type="text" name="Title" id="desc"></input>
+        Description
         <input type="text" name="Description" id="desc"></input>
         Upload Image!
             <input type="file" accept="image/png, image/jpeg" name="Image" id="image" enctype="multipart/form-data"></input>
+            <input type="hidden" name="Username" id="username">
+            <input type="hidden" name="Groupcode" id="groupcode">
             <input type="submit" value="Create Post" id="createPost"></input>
     </form>
     

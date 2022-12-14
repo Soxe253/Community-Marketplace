@@ -1,3 +1,2 @@
-{"postText":"test"}
-{"postText":"testing image","img":"chickens.jpg"}
-{"postText":"hello there","img":"eggs.jpg"}
+{"postTitle":"stickers","postText":"i am selling stickers ","img":"eggs.jpg","score":"0"}
+{"postTitle":"lighters","postText":"i am not selling stickers but i said the word","img":"testImage.jpg","score":"0"}
