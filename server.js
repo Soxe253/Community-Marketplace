@@ -254,6 +254,10 @@ app.get("/getPosts", (req,res) => {
         while(i<postsLength){
             let points = 0;
         
+            if (postsArray[i].Username.toLowerCase().includes(searchText)) {
+                points += 3;
+            }
+
             if (postsArray[i].postTitle.toLowerCase().includes(searchText)) {
                 points += 2;
             }
