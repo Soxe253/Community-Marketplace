@@ -181,14 +181,12 @@ app.post("/newPost", (req, res) => {  //posting request stuff in progress - Jord
         postTitle:post.Title,
         postText:post.Description,
         img:post.Image,
-        Username: post.Username,
-        GroupCode: post.Groupcode,
         score:"0"
     };
 
     let info = JSON.stringify(newPost);
     console.log("got post");
-    fs.appendFile(newPost.GroupCode + '/posts.txt', (info + "\n"), function(err){
+    fs.appendFile('12345/posts.txt', (info + "\n"), function(err){
         if(err){
             console.log(err);
         }
@@ -245,27 +243,26 @@ app.get("/getPosts", (req,res) => {
     let postsArray=[];
     r.on('line', function (text){//every line of posts.txt
         object=JSON.parse(text);
-        object.postTitle=object.postTitle.toLowerCase();
-        object.postText=object.postText.toLowerCase();
         postsArray.push(object);
     })
     
     r.on('close',function(){//has made array of post objects
-        console.log("go0t to close")
+        console.log("got to close")
         let i=0;
         const postsLength=postsArray.length;
         while(i<postsLength){
             let points = 0;
         
-            if (postsArray[i].postTitle.includes(searchText)) {
+            if (postsArray[i].postTitle.toLowerCase().includes(searchText)) {
                 points += 2;
             }
         
-            if (postsArray[i].postText.includes(searchText)) {
+            if (postsArray[i].postText.toLowerCase().includes(searchText)) {
                 points += 1;
             }
             postsArray[i].score=points;
             i++;
+            console.log(postsArray[i]);
         }
         //postsArray.sort((b, a) => a.points - b.points);
         function compare( a, b ) {
@@ -284,6 +281,8 @@ app.get("/getPosts", (req,res) => {
     //clear file
     const fs = require('fs');
     fs.truncate('12345/posts.txt', 0, function(){console.log('done')});
+    console.log("postsArray.length");
+    console.log(postsArray.length);
     while (j<postsArray.length){
         let newPost=postsArray[j];
         console.log("newPost");
