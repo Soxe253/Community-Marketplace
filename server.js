@@ -207,18 +207,18 @@ app.get("/getPosts", (req,res) => {
 })
 //THIS IS A THREAT
 //Good code. Sends group code back to login.js
-    app.post("/getGroupCode", (req,res) => {
+    app.post("/getUserInfo", (req,res) => {
         console.log("got to get group code");
         let user = req.body;
         fs.readFile('users.txt', (err,data) => {
             if (err) throw err;
             let newData = data.toString();
-            let users = newData.split('\n');
+            let usersArray = newData.split('\n');
             let i = 0;
-            while(i , users.length){
-                users = JSON.parse(users[i]);
+            while(i , usersArray.length){
+                users = JSON.parse(usersArray[i]);
                 if(user.userName === users.Username){
-                    return res.send(JSON.stringify(users[i]));
+                    return res.json(users);
                 }
                 i++;
             }
@@ -254,6 +254,10 @@ app.get("/getPosts", (req,res) => {
         while(i<postsLength){
             let points = 0;
         
+            if (postsArray[i].Username.toLowerCase().includes(searchText)) {
+                points += 3;
+            }
+
             if (postsArray[i].postTitle.toLowerCase().includes(searchText)) {
                 points += 2;
             }
