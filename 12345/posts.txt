@@ -1,2 +1,3 @@
 {"postText":"test"}
 {"postText":"testing image","img":"chickens.jpg"}
+{"postText":"hello there","img":"eggs.jpg"}
