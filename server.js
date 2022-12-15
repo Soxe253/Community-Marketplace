@@ -206,6 +206,27 @@ app.get("/getPosts", (req,res) => {
     });
 })
 //THIS IS A THREAT
+
+app.post("/getMyPosts", (req,res) => {
+    console.log("got getMyPosts");
+    let user = req.body;
+    fs.readFile('12345/posts.txt', (err,data) => {
+        if (err) throw err;
+        let newData = data.toString();
+        let postsArray = newData.split('\n');
+        var userArray = [];
+        let i = 0;
+        while(i , postsArray.length){ // it's broken
+            let post = postsArray[i];
+            if(user.userName === post.userName){
+                userArray.push(post);
+            }
+            i++;
+        }
+        res.send(userArray);
+    })
+})
+
 //Good code. Sends group code back to login.js
     app.post("/getUserInfo", (req,res) => {
         console.log("got to get group code");

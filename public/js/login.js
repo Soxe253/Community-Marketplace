@@ -14,8 +14,8 @@ window.addEventListener("DOMContentLoaded", buttonListener);
             
             localStorage.setItem('Username', user.userName);
             localStorage.setItem('Password', user.password);
-           let body = JSON.stringify(user);
-           console.log(body);         
+            let body = JSON.stringify(user);
+            console.log(body);         
                     let response = await fetch('/getUserInfo', {
                         method: "POST",
                         headers: {
@@ -24,7 +24,6 @@ window.addEventListener("DOMContentLoaded", buttonListener);
                         body: body
                     }); 
                     let userInfo = await response.json();
-                    //let groupCode = await response.text();
                     console.log(userInfo);
                 localStorage.setItem('GroupCode',userInfo.GroupCode);
                 localStorage.setItem('Name',userInfo.FirstName +" "+ userInfo.LastName); 
