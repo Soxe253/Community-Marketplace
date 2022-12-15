@@ -269,7 +269,6 @@ app.post("/getMyPosts", (req,res) => {
     })
     
     r.on('close',function(){//has made array of post objects
-        console.log("got to close")
         let i=0;
         const postsLength=postsArray.length;
         while(i<postsLength){
@@ -288,7 +287,6 @@ app.post("/getMyPosts", (req,res) => {
             }
             postsArray[i].score=points;
             i++;
-            console.log(postsArray[i]);
         }
         //postsArray.sort((b, a) => a.points - b.points);
         function compare( a, b ) {
@@ -307,12 +305,8 @@ app.post("/getMyPosts", (req,res) => {
     //clear file
     const fs = require('fs');
     fs.truncate('12345/posts.txt', 0, function(){console.log('done')});
-    console.log("postsArray.length");
-    console.log(postsArray.length);
     while (j<postsArray.length){
         let newPost=postsArray[j];
-        console.log("newPost");
-        console.log(newPost);
         newPost.score="0";
         let info = JSON.stringify(newPost);
         //add posts again in new order 
