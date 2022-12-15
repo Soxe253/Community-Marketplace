@@ -1,10 +1,10 @@
 let username = localStorage.getItem('Username');
 console.log(username);
-const textuser = document.createTextNode(username.substring(1, username.length - 1));
+const textuser = document.createTextNode(username);
 document.getElementById("username").appendChild(textuser);
 let groupcode = localStorage.getItem('GroupCode');
 console.log(groupcode);
-const textcode = document.createTextNode(groupcode.substring(1, groupcode.length - 1));
+const textcode = document.createTextNode(groupcode);
 document.getElementById("groupcode").appendChild(textcode);
 let profilename = localStorage.getItem('Name');
 console.log(profilename);
