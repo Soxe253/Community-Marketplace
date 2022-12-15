@@ -112,11 +112,17 @@ background:white;
 #postTitle{
     color:#00152E;
     font-weight: bolder;
-    font-size:larger;
+    font-size:25px;
     text-shadow: -1px 0 #FFAE00, 0 1px #FFAE00, 1px 0 #FFAE00, 0 -1px #FFAE00;
     padding-bottom:5%;
 }
 
+#username{
+    text-decoration: underline;
+    color:#00152E;
+    font-weight: bolder;
+    padding-bottom:5%;
+}
 
 /* header{
     display: flex;
