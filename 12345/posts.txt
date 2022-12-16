@@ -3,6 +3,12 @@
 {"postTitle":"Boticelli Lighter","postText":"I am a serious business woman","img":"lighter.png","Username":"kathy1234","GroupCode":"12345","score":"0"}
 {"postTitle":"Name Necklaces","postText":"I am selling custom name necklaces","img":"necklace.png","Username":"kathy1234","GroupCode":"12345","score":"0"}
 {"postTitle":"Scented Candles","postText":"I make my own candles cause I have time for that ","img":"candle.jpeg","Username":"kathy1234","GroupCode":"12345","score":"0"}
+<<<<<<< HEAD
 {"postTitle":"test post for jake","postText":"Testing how long i can make a description for a post wow this is getting very long i hope my grammar is okay","img":"chickens.jpg","Username":"js123","GroupCode":"12345","score":"0"}
+=======
+{"postTitle":"post.exe","postText":"Hi this is a post","img":"eggs.jpg","Username":"jordan3vh","GroupCode":"12345","score":"0"}
+{"postTitle":"Sticker Pack","postText":"super cool sticker pack yay please buy","img":"stickers.jpeg","Username":"kathy1234","GroupCode":"12345","score":"0"}
+{"postTitle":"SELLING CHICKENS","postText":"I HAVE WAY TO MANY ILL PAY YOU TO TAKE THEM","img":"chickens.jpg","Username":"amanda420","GroupCode":"12345","score":"0"}
+>>>>>>> f081ea86b41b9dc19abfa5e3c3f4bce8ec1a63ac
 {"postTitle":"Eggs for Sale","postText":"please buy my eggs","img":"eggs.jpg","Username":"kathy1234","GroupCode":"12345","score":"0"}
 {"postTitle":"Sticker Pack","postText":"super cool sticker pack yay please buy","img":"stickers.jpeg","Username":"kathy1234","GroupCode":"12345","score":"0"}
