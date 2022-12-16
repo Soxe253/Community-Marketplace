@@ -119,7 +119,7 @@ app.post("/logingo", (req, res) => {
     fs.readFile('users.txt', (err,data) =>{
         if(err) throw(err);
         data = data.toString();
-        let usersArray = data.split('\r');
+        let usersArray = data.split('\n');
         let i = 0;
        
         while(i < usersArray.length -1){
@@ -136,11 +136,17 @@ app.post("/logingo", (req, res) => {
                 GroupCode: userCheck.GroupCode,
                 UserExists: userExists
             }
-            res.send(userInfo);
+            
         }
         i++;
     }
     //if user doesnt exist
+    if(userExists){
+    res.send(userInfo);
+    }
+    else{
+        console.log("fail")
+    }
     })
 });
 
