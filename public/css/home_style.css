@@ -101,8 +101,8 @@ input[type=submit]{
 #postelement > img{
     display:flex;
     object-fit: cover;
-    width: 60%;
-    height: 60%;
+    width: 50%;
+    height: 50%;
 border:5px #FFAE00 solid;
 border-radius:5%;
 padding:2%;
