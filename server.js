@@ -6,6 +6,7 @@ const fs = require('fs');
 const bodyParser = require("body-parser"); // If we get data in a POST, this will parse it for us
 const { userInfo } = require("os");
 const { group } = require("console");
+const readline=require('readline');
 
 // Creates an Express application: https://expressjs.com/en/4x/api.html#app
 // Returns the Express application object
@@ -114,32 +115,45 @@ app.post("/createaccountgo", (req, res) => {
     });
 });
 
-
+//checks the users login info and sends it 
 app.post("/logingo", (req, res) => {
+    console.log("got to logingo")
+    let user = req.body;
     let userExists=false;
-    let userInfo = JSON.stringify(req.body);
-    userInfo=userInfo.substring(0,((userInfo.length)-1));//take off end bracket of username and password entered
-    const readline=require('readline');
-    var r=readline.createInterface({
-        input: fs.createReadStream('users.txt')
-    });
-    r.on('line', function (text){//every line of users.txt
-        const userLength=userInfo.length;
-        if((text.substring(0,userLength))===userInfo){
+    //take off end bracket of username and password entered
+    fs.readFile('users.txt', (err,data) =>{
+        if(err) throw(err);
+        data = data.toString();
+        let usersArray = data.split('\n');
+        let i = 0;
+       
+        while(i < usersArray.length -1){
+        
+            let userCheck = JSON.parse(usersArray[i]);
+
+        if(user.userName === userCheck.Username && user.password === userCheck.Password){
             console.log('success');
             userExists=true;
-            res.sendFile(__dirname + '/views/home.html');//send to home if correct
+            
+            var userInfo = {
+                FirstName: userCheck.FirstName,
+                LastName: userCheck.LastName,
+                GroupCode: userCheck.GroupCode,
+                UserExists: userExists
+            }
+            res.send(userInfo);
         }
+        i++;
+    }
+    //if user doesnt exist
+    var userInfo = {
+        FirstName: null,
+        LastName: null,
+        GroupCode: null,
+        UserExists: userExists
+    }
+    res.send(userInfo);
     })
-    
-    r.on('close',function(){//at end of users.txt
-        if (userExists=false){//if user doesn't exist
-        console.log('wrong');
-        window.alert("Wrong Username or Password");
-        res.sendFile(__dirname + '/views/login.html');//send to login if wrong
-        }
-    })
-    
 });
 
 // starts web server listening on localhost at port 3000
@@ -206,17 +220,42 @@ app.get("/getPosts", (req,res) => {
     });
 })
 //THIS IS A THREAT
+
+app.post("/getMyPosts", (req,res) => {
+    console.log("got getMyPosts");
+    let user = req.body;
+    console.log(user.userName);
+    fs.readFile('12345/posts.txt', (err,data) => {
+        if (err) throw err;
+        let newData = data.toString();
+        let postsArray = newData.split('\n');
+        var userArray = [];
+        let i = 0;
+        for(let post of postsArray){ // it's broken
+//            let post = postsArray[i];
+//            console.log(post);
+            if(user.userName === post.userName){
+                userArray.push(post);
+            }
+            i++;
+        }
+        let usersArray = JSON.stringify(userArray);
+        res.send(usersArray);
+    })
+})
+
 //Good code. Sends group code back to login.js
     app.post("/getUserInfo", (req,res) => {
-        console.log("got to get group code");
+        console.log("got to get user info");
         let user = req.body;
         fs.readFile('users.txt', (err,data) => {
             if (err) throw err;
             let newData = data.toString();
             let usersArray = newData.split('\n');
             let i = 0;
-            while(i , usersArray.length){
-                users = JSON.parse(usersArray[i]);
+            console.log("inside of getinfo" +newData);
+            while(i , usersArray.length - 1){
+                let users = JSON.parse(usersArray[i]);
                 if(user.userName === users.Username){
                     return res.json(users);
                 }
