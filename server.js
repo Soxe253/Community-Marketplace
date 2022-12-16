@@ -217,21 +217,21 @@ app.post("/getPosts", (req,res) => {
 app.post("/getMyPosts", (req,res) => {
     console.log("got getMyPosts");
     let user = req.body;
-    console.log(user.userName);
+//    console.log(user.userName);
     fs.readFile('12345/posts.txt', (err,data) => {
         if (err) throw err;
         let newData = data.toString();
-        console.log(newData);
+//        console.log(newData);
         let postsArray = newData.split('\n');
-        console.log(postsArray);
+//        console.log(postsArray);
         var userArray = [];
         let i = 0;
-        for(let post of postsArray){ // it's broken <-- yeah we got that
-            console.log(post);
-            if(post.length != 0){
+        for(let post of postsArray){ // iterates through each post
+//            console.log(post);
+            if(post.length != 0){ // if there are empty lines, they get ignored
                 post = JSON.parse(post);
-                console.log(post);
-                if(user.userName == post.Username){
+//                console.log(post);
+                if(user.userName == post.Username){ // if post creator matches username, add to array
                     userArray.push(post);
                 }
             }

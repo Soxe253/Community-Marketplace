@@ -11,14 +11,14 @@ console.log(profilename);
 const textname = document.createTextNode(profilename);
 document.getElementById("name").appendChild(textname);
 
-var user = {
+var user = {  // gets the current user as a json object
     userName: localStorage.getItem("Username"),
     password: localStorage.getItem("Password")
 }
 
 let profile = JSON.stringify(user);
-console.log(profile); 
-async function loadPosts (){
+//console.log(profile); 
+async function loadPosts (){ // requests the posts owned by the user
     try{
     const response = await fetch('/getMyPosts', {
         method: 'POST',
@@ -28,10 +28,9 @@ async function loadPosts (){
         body: profile
     });
     let body = await response.text();
-    let posts = JSON.parse(body);
-    console.log(posts);
-//    let posts = body.split("\\r");
-    for(let post of posts){        
+    let posts = JSON.parse(body);  // separates each post out from the array
+//    console.log(posts);
+    for(let post of posts){                     // displays all the posts on the page
         let postElement=document.createElement('div');
         postElement.id="postelement";
         let textElement=document.createElement('span');
@@ -44,7 +43,6 @@ async function loadPosts (){
         let description = document.createTextNode(post.postText);
         let img = document.createElement('img');
         img.src = '/img/' + post.img;
-        console.log(post);
         titleParent.appendChild(title);
         descriptionParent.appendChild(description);
         textElement.appendChild(titleParent);
