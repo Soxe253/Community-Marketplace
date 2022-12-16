@@ -114,6 +114,7 @@ span{
     font-weight:bold;
     padding:1% 2% 0% 2%;
     align-content:center;
+    width:150%;
  }
  #editProfile{
     text-decoration: underline;
