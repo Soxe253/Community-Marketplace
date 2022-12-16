@@ -65,14 +65,15 @@ app.post("/createaccount", (req, res) => {
     logins.push(req.body);
     console.log("success");
     console.log(logins);
-    res.sendFile(__dirname + '/views/login.html');
+    res.sendFile(__dirname + '/views/createaccount.html');
 });
 
 
 app.post("/createaccountgo", (req, res) => {
     let user=req.body;
+    console.log(user);
     let success=true;
-    let newUsername="{\"Username\":\""+req.body.Username+"\"";
+    let newUsername="{\"Username\":\""+user.Username+"\"";
     console.log(newUsername);
     //start
     const readline=require('readline');
@@ -88,16 +89,10 @@ app.post("/createaccountgo", (req, res) => {
     })
     r.on('close',function(){//if username doesn't already exist 
         if(success===true){
-        let newUser={
-            Username:user.Username,
-            Password:user.Password,
-            FirstName:user.FirstName,
-            LastName:user.LastName,
-            GroupCode:user.GroupCode
-        };
-
-        let info = JSON.stringify(newUser);
-        fs.appendFile(newUser.GroupCode +'/users.txt', (info + "\n"), function(err){
+       
+        let info = JSON.stringify(user);
+        console.log(info);
+        fs.appendFile(user.GroupCode +'/users.txt', (info + "\n"), function(err){
             if(err){
                 console.log(err);
                 console.log("wrong: error"); 
@@ -110,7 +105,7 @@ app.post("/createaccountgo", (req, res) => {
             }
         })
         console.log('success');
-    res.sendFile(__dirname + '/views/home.html');//send to login if correct
+        res.send(success);//send boolean
         }
     });
 });
@@ -124,7 +119,7 @@ app.post("/logingo", (req, res) => {
     fs.readFile('users.txt', (err,data) =>{
         if(err) throw(err);
         data = data.toString();
-        let usersArray = data.split('\r');
+        let usersArray = data.split('\n');
         let i = 0;
        
         while(i < usersArray.length -1){
@@ -141,11 +136,17 @@ app.post("/logingo", (req, res) => {
                 GroupCode: userCheck.GroupCode,
                 UserExists: userExists
             }
-            res.send(userInfo);
+            
         }
         i++;
     }
     //if user doesnt exist
+    if(userExists){
+    res.send(userInfo);
+    }
+    else{
+        console.log("fail")
+    }
     })
 });
 
