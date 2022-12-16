@@ -210,20 +210,23 @@ app.get("/getPosts", (req,res) => {
 app.post("/getMyPosts", (req,res) => {
     console.log("got getMyPosts");
     let user = req.body;
+    console.log(user.userName);
     fs.readFile('12345/posts.txt', (err,data) => {
         if (err) throw err;
         let newData = data.toString();
         let postsArray = newData.split('\n');
         var userArray = [];
         let i = 0;
-        while(i , postsArray.length){ // it's broken
-            let post = postsArray[i];
+        for(let post of postsArray){ // it's broken
+//            let post = postsArray[i];
+//            console.log(post);
             if(user.userName === post.userName){
                 userArray.push(post);
             }
             i++;
         }
-        res.send(userArray);
+        let usersArray = JSON.stringify(userArray);
+        res.send(usersArray);
     })
 })
 

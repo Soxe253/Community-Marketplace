@@ -24,7 +24,7 @@ var user = {
     password: localStorage.password
 }
 
-let profile = JSON.stringify(user);
+//let profile = JSON.stringify(user);
 console.log(profile); 
 async function loadPosts (){
     try{
@@ -33,12 +33,13 @@ async function loadPosts (){
         headers: {
             'Content-Type' : 'application/json'
         },
-        body: profile
+        body: user
     });
     let body = await response.text();
-    let posts = body.split("\n");
-    for(let i = 0; i < posts.length - 1; i++){
-        let post = JSON.parse(posts[i]);
+    let posts = JSON.parse(body);
+//    let posts = body.split("\\r");
+    for(let rawpost of posts){        
+        let post = JSON.parse(rawpost);
         let postElement=document.createElement('div');
         postElement.id="postelement";
         let textElement=document.createElement('span');
@@ -51,6 +52,7 @@ async function loadPosts (){
         let description = document.createTextNode(post.postText);
         let img = document.createElement('img');
         img.src = '/img/' + post.img;
+        console.log(post);
         titleParent.appendChild(title);
         descriptionParent.appendChild(description);
         textElement.appendChild(titleParent);
