@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", buttonListener);
 async function buttonListener(){
     let button = document.querySelector("#createAccount");
         button.addEventListener("click", async function(){
-            var user = {
+            var user = {//fill json object with inputs to the createaccount form
                 Username: document.querySelector("#username").value,
                 Password: document.querySelector("#password").value,
                 FirstName: document.querySelector("#firstName").value,
@@ -24,7 +24,7 @@ async function buttonListener(){
                 body: jsonUser
             });
             let answer = await response.json();
-                if(answer){
+                if(answer){//if the account doesnt already exist we log the user in and set the locals
                     localStorage.setItem('Username',user.Username);
                     localStorage.setItem('Password',user.Password);
                     localStorage.setItem('GroupCode',user.GroupCode);
@@ -32,7 +32,7 @@ async function buttonListener(){
                     window.location = "/home";
                     window.location.href = "/home";
                 }
-                else{
+                else{//if the account does exist, send back to createaccount to try again
                     window.location = "/";
                     window.location.href = "/";
                 }

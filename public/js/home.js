@@ -1,7 +1,7 @@
 
 async function load (){
     try{
-    const response = await fetch('/getPosts', {
+    const response = await fetch('/getPosts', {//fetch the posts from the server
         method: 'POST',
         headers: {
             'Content-Type' : 'application/json'

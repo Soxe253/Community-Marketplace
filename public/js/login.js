@@ -5,8 +5,8 @@ window.addEventListener("DOMContentLoaded", buttonListener);
 
  async function buttonListener(){
     let button = document.querySelector("#login");
-        button.addEventListener("click",  async function(){
-            var user = {
+        button.addEventListener("click",  async function(){//receive input from the login form
+            var user = {//put login info into a json
                 userName: document.querySelector("#username").value,
                 password: document.querySelector("#password").value
             }
@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", buttonListener);
                     },
                     body: body
                 });
-                let userInfo= await response.json();
+                let userInfo= await response.json();//this is all the users info from the user file
             
                 //once user is confirmed we fill local storage with their info
             if(userInfo.UserExists){

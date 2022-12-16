@@ -92,13 +92,13 @@ app.post("/createaccountgo", (req, res) => {
        
         let info = JSON.stringify(user);
         console.log(info);
-        fs.appendFile(user.GroupCode +'/users.txt', (info + "\n"), function(err){
+        fs.appendFile(user.GroupCode +'/users.txt', (info + "\n"), function(err){//add their account to the users file
             if(err){
                 console.log(err);
                 console.log("wrong: error"); 
             }
         })
-        fs.appendFile('users.txt', (info + "\n"), function(err){
+        fs.appendFile('users.txt', (info + "\n"), function(err){//both users files
             if(err){
                 console.log(err);
                 console.log("wrong: error"); 
@@ -113,24 +113,24 @@ app.post("/createaccountgo", (req, res) => {
 //checks the users login info and sends it 
 app.post("/logingo", (req, res) => {
     console.log("got to logingo")
-    let user = req.body;
-    let userExists=false;
+    let user = req.body;//get the users info
+    let userExists=false;//set them to nonexistent to start
 
-    fs.readFile('users.txt', (err,data) =>{
+    fs.readFile('users.txt', (err,data) =>{//read in users file
         if(err) throw(err);
         data = data.toString();
-        let usersArray = data.split('\n');
+        let usersArray = data.split('\n');//split into an array
         let i = 0;
        
-        while(i < usersArray.length -1){
+        while(i < usersArray.length -1){//iterate through array
         
             let userCheck = JSON.parse(usersArray[i]);
             
-        if(user.userName === userCheck.Username && user.password === userCheck.Password){
+        if(user.userName === userCheck.Username && user.password === userCheck.Password){//check the user against the set user accounts
             console.log('success');
-            userExists=true;
+            userExists=true;//if theyre account is saved then they get set to true
             
-            var userInfo = {
+            var userInfo = {//their info is filled into a json
                 FirstName: userCheck.FirstName,
                 LastName: userCheck.LastName,
                 GroupCode: userCheck.GroupCode,
@@ -142,7 +142,7 @@ app.post("/logingo", (req, res) => {
     }
     //if user doesnt exist
     if(userExists){
-    res.send(userInfo);
+    res.send(userInfo);//the json and their true/false get sent back to login.js
     }
     else{
         console.log("fail")
@@ -182,7 +182,7 @@ app.get("/loginpage", (req, res) => {
     res.sendFile(__dirname + '/views/login.html');
 });
 
-app.post("/newPost", (req, res) => {  //posting request stuff in progress - Jordan
+app.post("/newPost", (req, res) => {  //make a new json for the post
     //console.log(req.body);
     let post=req.body;
     let newPost={
@@ -196,16 +196,16 @@ app.post("/newPost", (req, res) => {  //posting request stuff in progress - Jord
 
     let info = JSON.stringify(newPost);
     console.log("got post");
-    fs.appendFile('12345/posts.txt', (info + "\n"), function(err){
+    fs.appendFile('12345/posts.txt', (info + "\n"), function(err){//add post object to the posts file
         if(err){
             console.log(err);
         }
         console.log("success"); 
     })
-    res.sendFile(__dirname + '/views/home.html');
+    res.sendFile(__dirname + '/views/home.html');//send user to homepage
 })
 
-// DO NOT DELETE MY CHILD
+// send posts from the file to home.js
 app.post("/getPosts", (req,res) => {
     console.log("got getPosts");
     fs.readFile('12345/posts.txt', (err, data) => { //THIS IS PERFECT CODE DO NOT CHANGE
@@ -213,7 +213,7 @@ app.post("/getPosts", (req,res) => {
         res.send(data);
     });
 })
-//THIS IS A THREAT
+
 
 app.post("/getMyPosts", (req,res) => {
     console.log("got getMyPosts");
