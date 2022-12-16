@@ -1,5 +1,3 @@
-window.addEventListener("DOMContentLoaded", buttonListener);
-
 let username = localStorage.getItem('Username');//get the logged in users groupcode/username
 let groupcode = localStorage.getItem('GroupCode');
 

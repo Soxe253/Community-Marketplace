@@ -9,4 +9,4 @@
 {"postTitle":"Scented Candles","postText":"I make my own candles cause I have time for that ","img":"candle.jpeg","Username":"kathy1234","GroupCode":"12345","score":"0"}
 {"postTitle":"Sticker Pack","postText":"super cool sticker pack yay please buy","img":"stickers.jpeg","Username":"kathy1234","GroupCode":"12345","score":"0"}
 {"postTitle":"Dont delete me","postText":"Dont delete","img":"testImage.jpg","Username":"soxe","GroupCode":"12345","score":"0"}
-{"postTitle":"test","postText":"testing","img":"candle.jpeg","Username":"","GroupCode":"","score":"0"}
+
