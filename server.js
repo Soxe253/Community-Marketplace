@@ -220,6 +220,30 @@ app.get("/getPosts", (req,res) => {
     });
 })
 //THIS IS A THREAT
+
+app.post("/getMyPosts", (req,res) => {
+    console.log("got getMyPosts");
+    let user = req.body;
+    console.log(user.userName);
+    fs.readFile('12345/posts.txt', (err,data) => {
+        if (err) throw err;
+        let newData = data.toString();
+        let postsArray = newData.split('\n');
+        var userArray = [];
+        let i = 0;
+        for(let post of postsArray){ // it's broken
+//            let post = postsArray[i];
+//            console.log(post);
+            if(user.userName === post.userName){
+                userArray.push(post);
+            }
+            i++;
+        }
+        let usersArray = JSON.stringify(userArray);
+        res.send(usersArray);
+    })
+})
+
 //Good code. Sends group code back to login.js
     app.post("/getUserInfo", (req,res) => {
         console.log("got to get user info");
@@ -263,7 +287,6 @@ app.get("/getPosts", (req,res) => {
     })
     
     r.on('close',function(){//has made array of post objects
-        console.log("got to close")
         let i=0;
         const postsLength=postsArray.length;
         while(i<postsLength){
@@ -282,7 +305,6 @@ app.get("/getPosts", (req,res) => {
             }
             postsArray[i].score=points;
             i++;
-            console.log(postsArray[i]);
         }
         //postsArray.sort((b, a) => a.points - b.points);
         function compare( a, b ) {
@@ -301,12 +323,8 @@ app.get("/getPosts", (req,res) => {
     //clear file
     const fs = require('fs');
     fs.truncate('12345/posts.txt', 0, function(){console.log('done')});
-    console.log("postsArray.length");
-    console.log(postsArray.length);
     while (j<postsArray.length){
         let newPost=postsArray[j];
-        console.log("newPost");
-        console.log(newPost);
         newPost.score="0";
         let info = JSON.stringify(newPost);
         //add posts again in new order 

@@ -1,5 +1,4 @@
 
-//const fs = require('fs');
 
 window.addEventListener("DOMContentLoaded", buttonListener);
 

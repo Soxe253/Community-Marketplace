@@ -14,16 +14,11 @@ async function buttonListener(){
                 lastName: document.querySelector("#lastName").value,
                 groupCode: document.querySelector("#groupCode")
             }
-            
+
             jsonUser = JSON.stringify(user);
- 
+
             jsUser = JSON.parse(jsonUser);
             console.log(jsUser.firstName + "" + jsUser.lastName + "" + jsUser.userName + "" + jsUser.password);
 
         })
 }
-
-
-
-
-
