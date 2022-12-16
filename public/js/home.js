@@ -5,8 +5,7 @@ async function load (){
         method: 'GET',
         headers: {
             'Content-Type' : 'application/json'
-        },
-        body: localStorage.getItem('GroupCode')
+        }
     });
     let body = await response.text();
     let posts = body.split("\n");
