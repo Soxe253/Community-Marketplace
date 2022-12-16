@@ -120,17 +120,17 @@ app.post("/logingo", (req, res) => {
     console.log("got to logingo")
     let user = req.body;
     let userExists=false;
-    //take off end bracket of username and password entered
+
     fs.readFile('users.txt', (err,data) =>{
         if(err) throw(err);
         data = data.toString();
-        let usersArray = data.split('\n');
+        let usersArray = data.split('\r');
         let i = 0;
        
         while(i < usersArray.length -1){
         
             let userCheck = JSON.parse(usersArray[i]);
-
+            
         if(user.userName === userCheck.Username && user.password === userCheck.Password){
             console.log('success');
             userExists=true;
@@ -146,13 +146,6 @@ app.post("/logingo", (req, res) => {
         i++;
     }
     //if user doesnt exist
-    var userInfo = {
-        FirstName: null,
-        LastName: null,
-        GroupCode: null,
-        UserExists: userExists
-    }
-    res.send(userInfo);
     })
 });
 
@@ -212,7 +205,7 @@ app.post("/newPost", (req, res) => {  //posting request stuff in progress - Jord
 })
 
 // DO NOT DELETE MY CHILD
-app.get("/getPosts", (req,res) => {
+app.post("/getPosts", (req,res) => {
     console.log("got getPosts");
     fs.readFile('12345/posts.txt', (err, data) => { //THIS IS PERFECT CODE DO NOT CHANGE
         if (err) throw err;

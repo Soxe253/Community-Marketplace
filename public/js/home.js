@@ -2,11 +2,10 @@
 async function load (){
     try{
     const response = await fetch('/getPosts', {
-        method: 'GET',
+        method: 'POST',
         headers: {
             'Content-Type' : 'application/json'
-        },
-        body: localStorage.getItem('GroupCode')
+        }
     });
     let body = await response.text();
     let posts = body.split("\n");
