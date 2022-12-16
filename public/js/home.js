@@ -2,7 +2,7 @@
 async function load (){
     try{
     const response = await fetch('/getPosts', {
-        method: 'GET',
+        method: 'POST',
         headers: {
             'Content-Type' : 'application/json'
         }
