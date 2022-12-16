@@ -1,5 +1,9 @@
 html{
     background-color:white;
+    height:100%;
+}
+body{
+    height:100%;
 }
 
 /* full header container */
@@ -79,15 +83,15 @@ input[type=submit]{
 section{
     display: flex;
     background-color:#FFAE00;
-   padding:3% 3% 20% 3%;
-   flex-direction: column;
-   width:10%;
-   float:left;
-   font-family: Georgia, 'Times New Roman', Times, serif;
-   font-weight: bold;
-   font-size:larger;
+    padding:3% 3% 20% 3%;
+    flex-direction: column;
+    width:10%;
+    height:100%;
+/*    float:left; */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size:larger;
  }
-
  section > a{
    color:#00152E;
     padding-top:7%;
@@ -160,6 +164,15 @@ background:white;
     text-decoration: underline;
     color:#00152E;
     font-weight: bolder;
-    padding-bottom:5%;
+}
+
+#name{
+    padding-bottom: 5%;
+}
+
+.pageContent{
+    display: flex;
+    height:100%;
+
 }
 

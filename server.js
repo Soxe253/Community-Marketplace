@@ -65,14 +65,15 @@ app.post("/createaccount", (req, res) => {
     logins.push(req.body);
     console.log("success");
     console.log(logins);
-    res.sendFile(__dirname + '/views/login.html');
+    res.sendFile(__dirname + '/views/createaccount.html');
 });
 
 
 app.post("/createaccountgo", (req, res) => {
     let user=req.body;
+    console.log(user);
     let success=true;
-    let newUsername="{\"Username\":\""+req.body.Username+"\"";
+    let newUsername="{\"Username\":\""+user.Username+"\"";
     console.log(newUsername);
     //start
     const readline=require('readline');
@@ -88,16 +89,10 @@ app.post("/createaccountgo", (req, res) => {
     })
     r.on('close',function(){//if username doesn't already exist 
         if(success===true){
-        let newUser={
-            Username:user.Username,
-            Password:user.Password,
-            FirstName:user.FirstName,
-            LastName:user.LastName,
-            GroupCode:user.GroupCode
-        };
-
-        let info = JSON.stringify(newUser);
-        fs.appendFile(newUser.GroupCode +'/users.txt', (info + "\n"), function(err){
+       
+        let info = JSON.stringify(user);
+        console.log(info);
+        fs.appendFile(user.GroupCode +'/users.txt', (info + "\n"), function(err){
             if(err){
                 console.log(err);
                 console.log("wrong: error"); 
@@ -110,7 +105,7 @@ app.post("/createaccountgo", (req, res) => {
             }
         })
         console.log('success');
-    res.sendFile(__dirname + '/views/home.html');//send to login if correct
+        res.send(success);//send boolean
         }
     });
 });
@@ -120,7 +115,7 @@ app.post("/logingo", (req, res) => {
     console.log("got to logingo")
     let user = req.body;
     let userExists=false;
-    //take off end bracket of username and password entered
+
     fs.readFile('users.txt', (err,data) =>{
         if(err) throw(err);
         data = data.toString();
@@ -130,7 +125,7 @@ app.post("/logingo", (req, res) => {
         while(i < usersArray.length -1){
         
             let userCheck = JSON.parse(usersArray[i]);
-
+            
         if(user.userName === userCheck.Username && user.password === userCheck.Password){
             console.log('success');
             userExists=true;
@@ -141,18 +136,17 @@ app.post("/logingo", (req, res) => {
                 GroupCode: userCheck.GroupCode,
                 UserExists: userExists
             }
-            res.send(userInfo);
+            
         }
         i++;
     }
     //if user doesnt exist
-    var userInfo = {
-        FirstName: null,
-        LastName: null,
-        GroupCode: null,
-        UserExists: userExists
-    }
+    if(userExists){
     res.send(userInfo);
+    }
+    else{
+        console.log("fail")
+    }
     })
 });
 
@@ -212,7 +206,7 @@ app.post("/newPost", (req, res) => {  //posting request stuff in progress - Jord
 })
 
 // DO NOT DELETE MY CHILD
-app.get("/getPosts", (req,res) => {
+app.post("/getPosts", (req,res) => {
     console.log("got getPosts");
     fs.readFile('12345/posts.txt', (err, data) => { //THIS IS PERFECT CODE DO NOT CHANGE
         if (err) throw err;
@@ -228,23 +222,27 @@ app.post("/getMyPosts", (req,res) => {
     fs.readFile('12345/posts.txt', (err,data) => {
         if (err) throw err;
         let newData = data.toString();
+        console.log(newData);
         let postsArray = newData.split('\n');
+        console.log(postsArray);
         var userArray = [];
         let i = 0;
-        for(let post of postsArray){ // it's broken
-//            let post = postsArray[i];
-//            console.log(post);
-            if(user.userName === post.userName){
-                userArray.push(post);
+        for(let post of postsArray){ // it's broken <-- yeah we got that
+            console.log(post);
+            if(post.length != 0){
+                post = JSON.parse(post);
+                console.log(post);
+                if(user.userName == post.Username){
+                    userArray.push(post);
+                }
             }
-            i++;
         }
         let usersArray = JSON.stringify(userArray);
         res.send(usersArray);
     })
 })
 
-//Good code. Sends group code back to login.js
+//Good code. Sends group code back to login.j
     app.post("/getUserInfo", (req,res) => {
         console.log("got to get user info");
         let user = req.body;

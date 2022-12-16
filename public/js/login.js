@@ -20,15 +20,15 @@ window.addEventListener("DOMContentLoaded", buttonListener);
                     body: body
                 });
                 let userInfo= await response.json();
-                console.log("testing printing");
-                console.log(userInfo);
+            
                 //once user is confirmed we fill local storage with their info
             if(userInfo.UserExists){
                     localStorage.setItem('Username', user.userName);
                     localStorage.setItem('Password', user.password);
                     localStorage.setItem('GroupCode',userInfo.GroupCode);
                     localStorage.setItem('Name',userInfo.FirstName +" "+ userInfo.LastName); 
-                   window.location = "/home"
+                    window.location = "/home";
+                    window.location.href = "/home";
             }
             else{
                 window.alert("Wrong Username or Password");
