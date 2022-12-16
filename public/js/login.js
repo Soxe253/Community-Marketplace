@@ -20,8 +20,7 @@ window.addEventListener("DOMContentLoaded", buttonListener);
                     body: body
                 });
                 let userInfo= await response.json();
-                console.log("testing printing");
-                console.log(userInfo);
+            
                 //once user is confirmed we fill local storage with their info
             if(userInfo.UserExists){
                     localStorage.setItem('Username', user.userName);
