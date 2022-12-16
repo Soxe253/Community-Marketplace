@@ -11,20 +11,12 @@ console.log(profilename);
 const textname = document.createTextNode(profilename);
 document.getElementById("name").appendChild(textname);
 
-// var user = {
-//     userName: username,
-//     password: password
-// }
-
-// let body = JSON.stringify(user);
-// console.log(body);
-
 var user = {
-    userName: localStorage.username,
-    password: localStorage.password
+    userName: localStorage.getItem("Username"),
+    password: localStorage.getItem("Password")
 }
 
-//let profile = JSON.stringify(user);
+let profile = JSON.stringify(user);
 console.log(profile); 
 async function loadPosts (){
     try{
@@ -33,13 +25,13 @@ async function loadPosts (){
         headers: {
             'Content-Type' : 'application/json'
         },
-        body: user
+        body: profile
     });
     let body = await response.text();
     let posts = JSON.parse(body);
+    console.log(posts);
 //    let posts = body.split("\\r");
-    for(let rawpost of posts){        
-        let post = JSON.parse(rawpost);
+    for(let post of posts){        
         let postElement=document.createElement('div');
         postElement.id="postelement";
         let textElement=document.createElement('span');

@@ -214,23 +214,27 @@ app.post("/getMyPosts", (req,res) => {
     fs.readFile('12345/posts.txt', (err,data) => {
         if (err) throw err;
         let newData = data.toString();
+        console.log(newData);
         let postsArray = newData.split('\n');
+        console.log(postsArray);
         var userArray = [];
         let i = 0;
-        for(let post of postsArray){ // it's broken
-//            let post = postsArray[i];
-//            console.log(post);
-            if(user.userName === post.userName){
-                userArray.push(post);
+        for(let post of postsArray){ // it's broken <-- yeah we got that
+            console.log(post);
+            if(post.length != 0){
+                post = JSON.parse(post);
+                console.log(post);
+                if(user.userName == post.Username){
+                    userArray.push(post);
+                }
             }
-            i++;
         }
         let usersArray = JSON.stringify(userArray);
         res.send(usersArray);
     })
 })
 
-//Good code. Sends group code back to login.js
+//Good code. Sends group code back to login.j
     app.post("/getUserInfo", (req,res) => {
         console.log("got to get group code");
         let user = req.body;

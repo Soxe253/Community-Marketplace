@@ -4,3 +4,5 @@
 {"postTitle":"Boticelli Lighter","postText":"I am a serious business woman","img":"lighter.png","Username":"kathy1234","GroupCode":"12345","score":"0"}
 {"postTitle":"Name Necklaces","postText":"I am selling custom name necklaces","img":"necklace.png","Username":"kathy1234","GroupCode":"12345","score":"0"}
 {"postTitle":"Tattoos","postText":"Super flawless tatties made by me ! super sick super profeshional","img":"tattoo.jpeg","Username":"kathy1234","GroupCode":"12345","score":"0"}
+{"postTitle":"my post","postText":"it's mine I swear","img":"wreath.jpg","Username":"jordan3vh","GroupCode":"12345","score":"0"}
+{"postTitle":"hi","postText":"i liek minceraft","img":"minecraft.png","Username":"jordan3vh","GroupCode":"12345","score":"0"}
