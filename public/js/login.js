@@ -27,7 +27,8 @@ window.addEventListener("DOMContentLoaded", buttonListener);
                     localStorage.setItem('Password', user.password);
                     localStorage.setItem('GroupCode',userInfo.GroupCode);
                     localStorage.setItem('Name',userInfo.FirstName +" "+ userInfo.LastName); 
-                   window.location = "/home"
+                    window.location = "/home";
+                    window.location.href = "/home";
             }
             else{
                 window.alert("Wrong Username or Password");

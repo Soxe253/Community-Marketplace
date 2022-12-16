@@ -1,3 +1,6 @@
 {"Username":"jordan3vh","Password":"test","FirstName":"Jordan","LastName":"Verkh-Haskell","GroupCode":"12345"}
 {"Username":"quinnstober","Password":"password","FirstName":"Quinn","LastName":"Stober","GroupCode":"12345"}
 {"Username":"soxe","Password":"253","FirstName":"Spencer","LastName":"Oxe","GroupCode":"12345"}
+{"Username":"js123","Password":"321","FirstName":"Jake","LastName":"Smith","GroupCode":"12345"}
+{"Username":"123","Password":"321","FirstName":"xs","LastName":"xx","GroupCode":"12345"}
+{"Username":"tester","Password":"123","FirstName":"Spencer","LastName":"Oxe","GroupCode":"12345"}
